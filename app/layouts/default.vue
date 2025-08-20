@@ -30,7 +30,7 @@
     </header>
 
     <!-- Main content -->
-    <main class="flex-1 container mx-auto px-6 py-10">
+    <main>
       <slot/>
     </main>
 
