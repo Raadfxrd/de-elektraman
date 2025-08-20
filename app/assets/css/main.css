@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+	--color-primary: #8477D9;
+	--color-secondary: #07038C;
+	--color-background: #F0F0F2;
+	--color-accent: #99BF0F;
+	--color-highlight: #F26938;
+	--font-family: 'Unbounded', sans-serif;
+}
+
+html, body {
+	background-color: var(--color-background);
+	color: var(--color-secondary);
+	font-family: var(--font-family), sans-serif;
+}
