@@ -1,29 +1,62 @@
 <template>
-  <header>
-    <nav class="container mx-auto flex items-center justify-between py-4 px-6">
-      <!-- Logo / Brand -->
-      <NuxtLink to="/" class="text-2xl font-bold tracking-tight hover:text-highlight transition-colors">
-        De Elektraman ⚡
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav class="container mx-auto flex items-center justify-between py-5 px-6">
+      <!-- Logo -->
+      <NuxtLink to="/" class="flex items-center gap-2">
+        <img
+            src="/logo.png"
+            alt="De Elektraman Logo"
+            class="w-12 h-12 object-contain"
+        >
+        <span class="text-xl font-bold text-gray-900 tracking-tight">De Elektraman</span>
       </NuxtLink>
 
-      <!-- Navigation -->
-      <ul class="flex gap-6 font-medium">
+      <!-- Navigation Links -->
+      <ul class="hidden md:flex gap-8 font-medium text-gray-700">
         <li>
-          <NuxtLink to="/" class="hover:text-highlight transition-colors">Home</NuxtLink>
+          <NuxtLink to="/" class="relative hover:text-green-600 transition-colors duration-200 group">
+            Home
+            <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-200"></span>
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/services" class="hover:text-highlight transition-colors">Services</NuxtLink>
+          <NuxtLink to="/services" class="relative hover:text-green-600 transition-colors duration-200 group">
+            Diensten
+            <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-200"></span>
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/portfolio" class="hover:text-highlight transition-colors">Portfolio</NuxtLink>
+          <NuxtLink to="/portfolio" class="relative hover:text-green-600 transition-colors duration-200 group">
+            Portfolio
+            <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-200"></span>
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/offer" class="hover:text-highlight transition-colors">Offers</NuxtLink>
+          <NuxtLink to="/offer" class="relative hover:text-green-600 transition-colors duration-200 group">
+            Aanbiedingen
+            <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-200"></span>
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/contact" class="hover:text-highlight transition-colors">Contact</NuxtLink>
+          <NuxtLink to="/contact" class="relative hover:text-green-600 transition-colors duration-200 group">
+            Contact
+            <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-200"></span>
+          </NuxtLink>
         </li>
       </ul>
+
+      <!-- CTA Button -->
+      <NuxtLink
+          to="/contact"
+          class="hidden md:inline-block px-6 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-sm"
+      >
+        Offerte Aanvragen
+      </NuxtLink>
     </nav>
   </header>
 </template>

@@ -1,12 +1,76 @@
 <template>
-  <footer class="py-6">
-    <div class="container mx-auto text-center text-sm">
-      <p>© {{ currentYear }} De Elektraman — Alle rechten voorbehouden.</p>
-      <p class="mt-2">
-        <NuxtLink to="/privacy" class="hover:underline">Privacy</NuxtLink>
-        •
-        <NuxtLink to="/terms" class="hover:underline">Terms</NuxtLink>
-      </p>
+  <footer class="bg-gray-50 border-t border-gray-100 mt-20">
+    <div class="container mx-auto px-6 py-12">
+      <!-- Footer Content -->
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <img
+                src="/logo.png"
+                alt="De Elektraman Logo"
+                class="w-12 h-12 object-contain"
+            >
+            <span class="text-lg font-bold text-gray-900">De Elektraman</span>
+          </div>
+          <p class="text-gray-600 text-sm">Professionele elektrische diensten voor al uw behoeften.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold text-gray-900 mb-4">Snelle Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <NuxtLink to="/" class="text-gray-600 hover:text-green-600 transition-colors">Home</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/services" class="text-gray-600 hover:text-green-600 transition-colors">Diensten</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/portfolio" class="text-gray-600 hover:text-green-600 transition-colors">Portfolio
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-bold text-gray-900 mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>E-mail: <a href="mailto:info@deelektraman.nl" class="hover:text-green-600 transition-colors">info@deelektraman.nl</a>
+            </li>
+            <li>Telefoon: <a href="tel:+31612345678" class="hover:text-green-600 transition-colors">+31 (0) 6 1234
+              5678</a></li>
+            <li>Altijd beschikbaar voor spoedeisende gevallen</li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="font-bold text-gray-900 mb-4">Rechtmatig</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <NuxtLink to="/privacy" class="text-gray-600 hover:text-green-600 transition-colors">Privacybeleid
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/terms" class="text-gray-600 hover:text-green-600 transition-colors">Servicevoorwaarden
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div
+          class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+        <p>© {{ currentYear }} De Elektraman — Alle rechten voorbehouden.</p>
+        <div class="mt-4 md:mt-0 flex gap-6">
+          <a href="#" class="hover:text-green-600 transition-colors">LinkedIn</a>
+          <a href="#" class="hover:text-green-600 transition-colors">Facebook</a>
+          <a href="#" class="hover:text-green-600 transition-colors">Instagram</a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>

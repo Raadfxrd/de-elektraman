@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-main-gradient min-h-screen flex flex-col text-gray-100 dark:text-gray-900">
-    <AppNavbar />
+  <div class="bg-white min-h-screen flex flex-col text-gray-900">
+    <AppNavbar/>
     <main>
       <slot/>
     </main>
-    <AppFooter />
+    <AppFooter/>
   </div>
 </template>
 
