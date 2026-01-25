@@ -19,7 +19,7 @@ import {
           <h1 class="text-5xl md:text-6xl font-bold leading-tight text-secondary mb-6">
             Volledige Elektrische <span class="text-primary">Diensten</span>
           </h1>
-          <p class="text-xl leading-relaxed text-gray-600">
+          <p class="text-xl leading-relaxed text-gray-700">
             Van residentiële tot industriële projecten, De Elektraman biedt professionele en betrouwbare elektrische
             diensten.
           </p>
@@ -32,7 +32,7 @@ import {
       <div class="container mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Onze Kernservices</h2>
-          <p class="text-xl max-w-2xl mx-auto text-gray-600">
+          <p class="text-xl max-w-2xl mx-auto text-gray-700">
             Alles wat u nodig heeft voor betrouwbare elektrische systemen
           </p>
         </div>
@@ -46,11 +46,11 @@ import {
               <BoltIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary">Installaties</h3>
-            <p class="leading-relaxed text-gray-600 mb-4">
+            <p class="leading-relaxed text-gray-700 mb-4">
               Professionele installatie van elektrische systemen, verlichting, bedrading en moderne smart
               home-oplossingen.
             </p>
-            <ul class="space-y-2 text-gray-600">
+            <ul class="space-y-2 text-gray-700">
               <li class="flex items-center gap-2">
                 <CheckIcon class="w-4 h-4 text-primary"/>
                 <span>Nieuwbouw en renovaties</span>
@@ -74,10 +74,10 @@ import {
               <WrenchScrewdriverIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary">Onderhoud & Inspectie</h3>
-            <p class="leading-relaxed text-gray-600 mb-4">
+            <p class="leading-relaxed text-gray-700 mb-4">
               Regelmatig onderhoud, veiligheidscontroles en preventieve diensten om uw systemen soepel te laten werken.
             </p>
-            <ul class="space-y-2 text-gray-600">
+            <ul class="space-y-2 text-gray-700">
               <li class="flex items-center gap-2">
                 <CheckIcon class="w-4 h-4 text-primary"/>
                 <span>Periodieke controles</span>
@@ -101,11 +101,11 @@ import {
               <ExclamationTriangleIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary">Spoedreparaties</h3>
-            <p class="leading-relaxed text-gray-600 mb-4">
+            <p class="leading-relaxed text-gray-700 mb-4">
               24/7 spoedeisende respons voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons
               nodig hebt.
             </p>
-            <ul class="space-y-2 text-gray-600">
+            <ul class="space-y-2 text-gray-700">
               <li class="flex items-center gap-2">
                 <CheckIcon class="w-4 h-4 text-primary"/>
                 <span>24/7 beschikbaarheid</span>
@@ -125,11 +125,11 @@ import {
     </section>
 
     <!-- Specialized Services -->
-    <section class="bg-gray-50 py-20 px-6">
+    <section class="bg-primary-light py-20 px-6">
       <div class="container mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Gespecialiseerde Diensten</h2>
-          <p class="text-xl max-w-2xl mx-auto text-gray-600">
+          <p class="text-xl max-w-2xl mx-auto text-gray-700">
             Voor verschillende soorten projecten en ruimtes
           </p>
         </div>
@@ -142,10 +142,10 @@ import {
               <HomeIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary text-center">Residentieel</h3>
-            <p class="leading-relaxed text-gray-600 text-center mb-6">
+            <p class="leading-relaxed text-gray-700 text-center mb-6">
               Huizen en appartementen voorzien van veilige, moderne elektrische systemen.
             </p>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-gray-700 text-sm">
               <li class="flex items-start gap-3">
                 <CheckIcon class="w-4 h-4 text-primary shrink-0 mt-0.5"/>
                 <span>Huisbedrading</span>
@@ -172,10 +172,10 @@ import {
               <BuildingOfficeIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary text-center">Commercieel</h3>
-            <p class="leading-relaxed text-gray-600 text-center mb-6">
+            <p class="leading-relaxed text-gray-700 text-center mb-6">
               Kantoren en winkels met betrouwbare en efficiënte elektriciteit.
             </p>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-gray-700 text-sm">
               <li class="flex items-start gap-3">
                 <CheckIcon class="w-4 h-4 text-primary shrink-0 mt-0.5"/>
                 <span>Bedrijfsbedrading</span>
@@ -202,10 +202,10 @@ import {
               <CogIcon class="w-8 h-8 text-primary"/>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-secondary text-center">Industrieel</h3>
-            <p class="leading-relaxed text-gray-600 text-center mb-6">
+            <p class="leading-relaxed text-gray-700 text-center mb-6">
               Fabricages en grote faciliteiten met geavanceerde elektrische oplossingen.
             </p>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-gray-700 text-sm">
               <li class="flex items-start gap-3">
                 <CheckIcon class="w-4 h-4 text-primary shrink-0 mt-0.5"/>
                 <span>Motorkrachten</span>
@@ -235,7 +235,7 @@ import {
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Meer Diensten</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 mx-auto">
           <div
               class="flex gap-4 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
             <div class="shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
@@ -243,7 +243,7 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Stekkercontacten & Schakelaars</h4>
-              <p class="text-gray-600 text-sm">Veilige installatie en vervanging van alle types.</p>
+              <p class="text-gray-700 text-sm">Veilige installatie en vervanging van alle types.</p>
             </div>
           </div>
 
@@ -254,7 +254,7 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Verlichting & Lampinstallatie</h4>
-              <p class="text-gray-600 text-sm">Van standaard tot decoratieve verlichtingoplossingen.</p>
+              <p class="text-gray-700 text-sm">Van standaard tot decoratieve verlichtingoplossingen.</p>
             </div>
           </div>
 
@@ -265,7 +265,7 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Aardingsonderzoeken</h4>
-              <p class="text-gray-600 text-sm">Veiligheidstesten en certificering.</p>
+              <p class="text-gray-700 text-sm">Veiligheidstesten en certificering.</p>
             </div>
           </div>
 
@@ -276,7 +276,7 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Apparaatinstallatie</h4>
-              <p class="text-gray-600 text-sm">Veilige aansluiting van grote huishoudapparaten.</p>
+              <p class="text-gray-700 text-sm">Veilige aansluiting van grote huishoudapparaten.</p>
             </div>
           </div>
 
@@ -287,7 +287,7 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Beveiligingssystemen</h4>
-              <p class="text-gray-600 text-sm">CCTV en beveiligingsinstallatie.</p>
+              <p class="text-gray-700 text-sm">CCTV en beveiligingsinstallatie.</p>
             </div>
           </div>
 
@@ -298,7 +298,40 @@ import {
             </div>
             <div>
               <h4 class="text-lg font-bold mb-1 text-secondary">Testingen & Diagnostiek</h4>
-              <p class="text-gray-600 text-sm">Grondige systeemanalyse en probleemoplossing.</p>
+              <p class="text-gray-700 text-sm">Grondige systeemanalyse en probleemoplossing.</p>
+            </div>
+          </div>
+
+          <div
+              class="flex gap-4 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+            <div class="shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+              <SparklesIcon class="w-5 h-5"/>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1 text-secondary">Testingen & Diagnostiek</h4>
+              <p class="text-gray-700 text-sm">Grondige systeemanalyse en probleemoplossing.</p>
+            </div>
+          </div>
+
+          <div
+              class="flex gap-4 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+            <div class="shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+              <SparklesIcon class="w-5 h-5"/>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1 text-secondary">Testingen & Diagnostiek</h4>
+              <p class="text-gray-700 text-sm">Grondige systeemanalyse en probleemoplossing.</p>
+            </div>
+          </div>
+
+          <div
+              class="flex gap-4 p-6 rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+            <div class="shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+              <SparklesIcon class="w-5 h-5"/>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1 text-secondary">Testingen & Diagnostiek</h4>
+              <p class="text-gray-700 text-sm">Grondige systeemanalyse en probleemoplossing.</p>
             </div>
           </div>
         </div>
@@ -306,7 +339,7 @@ import {
     </section>
 
     <!-- Service Process -->
-    <section class="bg-gray-900 text-white py-20 px-6">
+    <section class="bg-secondary text-white py-20 px-6">
       <div class="container mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4">Hoe Wij Werken</h2>
@@ -322,7 +355,7 @@ import {
               1
             </div>
             <h4 class="text-lg font-bold mb-2">Contact</h4>
-            <p class="text-gray-300 text-sm">Neem contact op via telefoon of formulier</p>
+            <p class="text-white/80 text-sm">Neem contact op via telefoon of formulier</p>
           </div>
 
           <div class="text-center">
@@ -331,7 +364,7 @@ import {
               2
             </div>
             <h4 class="text-lg font-bold mb-2">Beoordeling</h4>
-            <p class="text-gray-300 text-sm">We beoordelen uw behoeften</p>
+            <p class="text-white/80 text-sm">We beoordelen uw behoeften</p>
           </div>
 
           <div class="text-center">
@@ -340,7 +373,7 @@ import {
               3
             </div>
             <h4 class="text-lg font-bold mb-2">Offerte</h4>
-            <p class="text-gray-300 text-sm">Ontvang een duidelijke offerte</p>
+            <p class="text-white/80 text-sm">Ontvang een duidelijke offerte</p>
           </div>
 
           <div class="text-center">
@@ -349,7 +382,7 @@ import {
               4
             </div>
             <h4 class="text-lg font-bold mb-2">Uitvoering</h4>
-            <p class="text-gray-300 text-sm">We voeren het werk professioneel uit</p>
+            <p class="text-white/80 text-sm">We voeren het werk professioneel uit</p>
           </div>
         </div>
       </div>
@@ -362,7 +395,7 @@ import {
           <h2 class="text-4xl md:text-5xl font-bold mb-6 text-secondary">
             Interesse in Onze Diensten?
           </h2>
-          <p class="text-xl text-gray-600 mb-8">
+          <p class="text-xl text-gray-700 mb-8">
             Neem vandaag contact op voor een gratis adviesgesprek en ontdek hoe wij u kunnen helpen.
           </p>
           <NuxtLink
