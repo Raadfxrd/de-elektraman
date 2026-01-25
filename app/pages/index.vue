@@ -32,7 +32,7 @@ import {BoltIcon, CheckIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} fro
             </div>
           </div>
 
-          <!-- Right Image/Graphic -->
+          <!-- Right Content -->
           <div class="relative hidden md:block">
             <div
                 class="w-full aspect-square rounded-2xl flex items-center justify-center overflow-hidden">
