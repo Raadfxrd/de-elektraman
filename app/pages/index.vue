@@ -80,7 +80,7 @@ import {BoltIcon, CheckIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} fro
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Service Card 1 -->
           <div
-              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200">
+              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
             <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center text-2xl mb-4">
               <BoltIcon class="w-8 h-8 text-primary"/>
             </div>
@@ -93,7 +93,7 @@ import {BoltIcon, CheckIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} fro
 
           <!-- Service Card 2 -->
           <div
-              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200">
+              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
             <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center text-2xl mb-4">
               <WrenchScrewdriverIcon class="w-8 h-8 text-primary"/>
             </div>
@@ -105,7 +105,7 @@ import {BoltIcon, CheckIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} fro
 
           <!-- Service Card 3 -->
           <div
-              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200">
+              class="p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
             <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center text-2xl mb-4">
               <ExclamationTriangleIcon class="w-8 h-8 text-primary"/>
             </div>
