@@ -176,7 +176,7 @@ const closeModal = () => {
               v-for="category in categories"
               :key="category"
               :class="[
-                'px-6 py-2 rounded-full font-semibold transition-all duration-200',
+                'px-6 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer',
                 selectedCategory === category
                   ? 'bg-primary text-white shadow-lg'
                   : 'border-2 border-border text-secondary hover:border-primary'
@@ -202,7 +202,7 @@ const closeModal = () => {
               v-for="(project, index) in filteredProjects"
               :key="project.id"
               :class="[
-                'group relative rounded-xl overflow-hidden cursor-pointer h-80 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2',
+                'group relative rounded-xl overflow-hidden cursor-pointer h-80 transition-all duration-300 hover:shadow-2xl',
                 index % 5 === 0 ? 'md:col-span-2 md:row-span-2 h-96 md:h-auto' : '',
                 index % 5 === 3 ? 'md:col-span-2 h-96' : ''
               ]"
@@ -212,7 +212,7 @@ const closeModal = () => {
             <img
                 :src="project.images[0]"
                 :alt="project.title"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             >
 
             <!-- Overlay -->

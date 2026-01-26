@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import {BoltIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} from '@heroicons/vue/24/solid'
+
+const companyInfo = useCompanyInfo()
 </script>
 <template>
   <div>
@@ -18,15 +20,15 @@ import {BoltIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} from '@heroico
       <div class="container mx-auto">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center">
-            <div class="text-4xl font-bold mb-2 text-primary">50+</div>
+            <div class="text-4xl font-bold mb-2 text-primary">{{ companyInfo.happyClients }}+</div>
             <p class="text-gray-700">Tevreden Klanten</p>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold mb-2 text-primary">2+</div>
+            <div class="text-4xl font-bold mb-2 text-primary">{{ companyInfo.yearsExperience }}+</div>
             <p class="text-gray-700">Jaar Ervaring</p>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold mb-2 text-primary">24/7</div>
+            <div class="text-4xl font-bold mb-2 text-primary">{{ companyInfo.hours.emergency }}</div>
             <p class="text-gray-700">Spoedeisende Dienst</p>
           </div>
         </div>

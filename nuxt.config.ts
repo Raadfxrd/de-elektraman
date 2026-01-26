@@ -13,6 +13,31 @@ export default defineNuxtConfig({
         '@nuxt/image',
     ],
 
+    runtimeConfig: {
+        public: {
+            appName: '',
+            websiteName: '',
+            companyDescription: '',
+            companyEmail: '',
+            companyPhone: '',
+            companyPhoneDisplay: '',
+            companyEmergencyPhone: '',
+            companyEmergencyPhoneDisplay: '',
+            hoursWeekdays: '',
+            hoursWeekend: '',
+            hoursSaturday: '',
+            hoursSunday: '',
+            hoursEmergency: '',
+            yearsExperience: '',
+            happyClients: '',
+            socialLinkedin: '',
+            socialFacebook: '',
+            socialInstagram: '',
+            companyAddress: '',
+            companySlogan: '',
+        }
+    },
+
     app: {
         pageTransition: {
             name: 'page',

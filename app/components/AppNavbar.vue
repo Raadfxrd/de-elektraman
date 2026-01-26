@@ -5,10 +5,10 @@
       <NuxtLink to="/" class="flex items-center gap-2">
         <img
             src="/logo.png"
-            alt="De Elektraman Logo"
+            :alt="`${companyInfo.appName} Logo`"
             class="w-12 h-12 object-contain"
         >
-        <span class="text-xl font-bold text-gray-900 tracking-tight">De Elektraman</span>
+        <span class="text-xl font-bold text-gray-900 tracking-tight">{{ companyInfo.appName }}</span>
       </NuxtLink>
 
       <!-- Navigation Links -->
@@ -54,8 +54,6 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: 'AppNavbar'
-}
+<script setup lang="ts">
+const companyInfo = useCompanyInfo()
 </script>

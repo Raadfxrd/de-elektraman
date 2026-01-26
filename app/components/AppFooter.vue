@@ -8,12 +8,12 @@
           <div class="flex items-center gap-2 mb-4">
             <img
                 src="/logo.png"
-                alt="De Elektraman Logo"
+                :alt="`${companyInfo.appName} Logo`"
                 class="w-12 h-12 object-contain"
             >
-            <span class="text-lg font-bold text-gray-900">De Elektraman</span>
+            <span class="text-lg font-bold text-gray-900">{{ companyInfo.appName }}</span>
           </div>
-          <p class="text-gray-600 text-sm">Professionele elektrische diensten voor al uw behoeften.</p>
+          <p class="text-gray-600 text-sm">{{ companyInfo.description }}</p>
         </div>
 
         <!-- Quick Links -->
@@ -37,10 +37,11 @@
         <div>
           <h4 class="font-bold text-gray-900 mb-4">Contact</h4>
           <ul class="space-y-2 text-sm text-gray-600">
-            <li>E-mail: <a href="mailto:info@deelektraman.nl" class="hover:text-green-600 transition-colors">info@deelektraman.nl</a>
+            <li>E-mail: <a :href="`mailto:${companyInfo.email}`"
+                           class="hover:text-green-600 transition-colors">{{ companyInfo.email }}</a>
             </li>
-            <li>Telefoon: <a href="tel:+31612345678" class="hover:text-green-600 transition-colors">+31 (0) 6 1234
-              5678</a></li>
+            <li>Telefoon: <a :href="`tel:${companyInfo.phone}`"
+                             class="hover:text-green-600 transition-colors">{{ companyInfo.phoneDisplay }}</a></li>
             <li>Altijd beschikbaar voor spoedeisende gevallen</li>
           </ul>
         </div>
@@ -64,11 +65,11 @@
       <!-- Bottom Footer -->
       <div
           class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-        <p>© {{ currentYear }} De Elektraman — Alle rechten voorbehouden.</p>
+        <p>© {{ currentYear }} {{ companyInfo.appName }} — Alle rechten voorbehouden.</p>
         <div class="mt-4 md:mt-0 flex gap-6">
-          <a href="#" class="hover:text-green-600 transition-colors">LinkedIn</a>
-          <a href="#" class="hover:text-green-600 transition-colors">Facebook</a>
-          <a href="#" class="hover:text-green-600 transition-colors">Instagram</a>
+          <a :href="companyInfo.social.linkedin" class="hover:text-green-600 transition-colors">LinkedIn</a>
+          <a :href="companyInfo.social.facebook" class="hover:text-green-600 transition-colors">Facebook</a>
+          <a :href="companyInfo.social.instagram" class="hover:text-green-600 transition-colors">Instagram</a>
         </div>
       </div>
     </div>
@@ -77,4 +78,5 @@
 
 <script setup lang="ts">
 const currentYear = new Date().getFullYear()
+const companyInfo = useCompanyInfo()
 </script>

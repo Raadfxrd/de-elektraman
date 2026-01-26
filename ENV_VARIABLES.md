@@ -1,0 +1,101 @@
+# Environment Variables Configuration
+
+This document explains how to configure the environment variables for the De Elektraman website.
+
+## Setup Instructions
+
+1. Copy the `.env.example` file to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit the `.env` file with your actual company information.
+
+3. Restart the development server after making changes to the `.env` file.
+
+## Available Environment Variables
+
+### App Configuration
+
+- `NUXT_PUBLIC_APP_NAME` - Company name (used in navbar, footer, page titles)
+- `NUXT_PUBLIC_WEBSITE_NAME` - Full website name for SEO
+- `NUXT_PUBLIC_COMPANY_DESCRIPTION` - Short company description
+- `NUXT_PUBLIC_COMPANY_SLOGAN` - Company slogan/tagline
+
+### Contact Information
+
+- `NUXT_PUBLIC_COMPANY_EMAIL` - Primary email address
+- `NUXT_PUBLIC_COMPANY_PHONE` - Phone number (format: +31612345678)
+- `NUXT_PUBLIC_COMPANY_PHONE_DISPLAY` - Phone number display format (format: +31 (0) 6 1234 5678)
+- `NUXT_PUBLIC_COMPANY_EMERGENCY_PHONE` - Emergency phone number
+- `NUXT_PUBLIC_COMPANY_EMERGENCY_PHONE_DISPLAY` - Emergency phone display format
+- `NUXT_PUBLIC_COMPANY_ADDRESS` - Company location/address
+
+### Business Hours
+
+- `NUXT_PUBLIC_HOURS_WEEKDAYS` - Opening hours Monday-Friday (e.g., "08:00 - 18:00")
+- `NUXT_PUBLIC_HOURS_SATURDAY` - Opening hours Saturday
+- `NUXT_PUBLIC_HOURS_SUNDAY` - Opening hours Sunday (e.g., "Gesloten" for closed)
+- `NUXT_PUBLIC_HOURS_EMERGENCY` - Emergency service availability (e.g., "24/7")
+
+**Business Hours Feature:** The website automatically detects if visitors are browsing within your business hours and
+shows:
+
+- Green "Nu beschikbaar" (Now available) indicator when within business hours
+- Gray "Beschikbaar [next opening time]" indicator when outside business hours
+- Emergency contact always shows as available if set to "24/7"
+
+### Company Statistics
+
+- `NUXT_PUBLIC_YEARS_EXPERIENCE` - Years of experience (displayed on homepage)
+- `NUXT_PUBLIC_HAPPY_CLIENTS` - Number of satisfied clients (displayed on homepage)
+
+### Social Media Links
+
+- `NUXT_PUBLIC_SOCIAL_LINKEDIN` - LinkedIn profile URL
+- `NUXT_PUBLIC_SOCIAL_FACEBOOK` - Facebook page URL
+- `NUXT_PUBLIC_SOCIAL_INSTAGRAM` - Instagram profile URL
+
+## Usage in Code
+
+The environment variables are accessible throughout the application via the `useCompanyInfo()` composable:
+
+```vue
+
+<script setup lang="ts">
+  const companyInfo = useCompanyInfo()
+</script>
+
+<template>
+  <div>
+    <p>{{ companyInfo.appName }}</p>
+    <p>{{ companyInfo.email }}</p>
+    <p>{{ companyInfo.phoneDisplay }}</p>
+  </div>
+</template>
+```
+
+## Where Variables Are Used
+
+- **Navbar**: Company name and logo alt text
+- **Footer**: Company name, description, contact info, social media links
+- **Contact Page**: Phone numbers, email, business hours
+- **Homepage**: Company statistics (years of experience, happy clients)
+- **All Pages**: Via the composable for any custom usage
+
+## Important Notes
+
+- All variables prefixed with `NUXT_PUBLIC_` are exposed to the client-side
+- The `.env` file should never be committed to version control
+- Always use `.env.example` as a template for new setups
+- Changes to environment variables require a server restart
+- Phone numbers should be in international format for the `tel:` links (+31...)
+- Display formats can include spaces and parentheses for readability
+
+## Development vs Production
+
+For production deployments, set these environment variables in your hosting platform's configuration:
+
+- Vercel: Project Settings → Environment Variables
+- Netlify: Site Settings → Build & Deploy → Environment
+- Other platforms: Consult their documentation for environment variable configuration
