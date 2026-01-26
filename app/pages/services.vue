@@ -20,14 +20,14 @@ import {
     />
 
     <!-- Primary Services -->
-    <section class="py-20 px-6">
+    <section class="py-12 md:py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
             title="Onze kernservices"
             description="Alles wat u nodig heeft voor betrouwbare elektrische systemen"
         />
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <ServiceCard
               :icon="BoltIcon"
               title="Installaties"
@@ -53,14 +53,14 @@ import {
     </section>
 
     <!-- Specialized Services -->
-    <section class="bg-primary-light py-20 px-6">
+    <section class="bg-primary-light py-12 md:py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
             title="Gespecialiseerde diensten"
             description="Voor verschillende soorten projecten en ruimtes"
         />
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <SpecializedServiceCard
               :icon="HomeIcon"
               title="Residentieel"
@@ -86,13 +86,13 @@ import {
     </section>
 
     <!-- Additional Services -->
-    <section class="py-20 px-6">
+    <section class="py-12 md:py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
             title="Meer diensten"
         />
 
-        <div class="grid md:grid-cols-3 gap-6 mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
           <SmallServiceCard
               :icon="SparklesIcon"
               title="Stekkercontacten & Schakelaars"

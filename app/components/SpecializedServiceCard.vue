@@ -17,24 +17,24 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-      class="p-8 rounded-xl bg-white border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+      class="p-6 md:p-8 rounded-xl bg-white border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
     <div
         :class="[
-      'w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6',
+      'w-12 h-12 md:w-16 md:h-16 bg-primary-light rounded-lg flex items-center justify-center mb-4 md:mb-6',
       centered ? 'mx-auto' : ''
     ]">
-      <component :is="icon" class="w-8 h-8 text-primary"/>
+      <component :is="icon" class="w-6 h-6 md:w-8 md:h-8 text-primary"/>
     </div>
     <h3
         :class="[
-      'text-2xl font-bold mb-3 text-secondary',
+      'text-xl md:text-2xl font-bold mb-2 md:mb-3 text-secondary',
       centered ? 'text-center' : ''
     ]">
       {{ title }}
     </h3>
     <p
         :class="[
-      'leading-relaxed text-gray-700 mb-6',
+      'leading-relaxed text-sm md:text-base text-gray-700 mb-4 md:mb-6',
       centered ? 'text-center' : ''
     ]">
       {{ description }}

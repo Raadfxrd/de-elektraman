@@ -15,7 +15,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <section
       :class="[
-    'py-16 md:py-20 px-6',
+    'py-12 md:py-16 lg:py-20 px-4 md:px-6',
     darkMode ? 'bg-gray-900' : ''
   ]">
     <div
@@ -23,17 +23,17 @@ withDefaults(defineProps<Props>(), {
       'container mx-auto text-center',
       darkMode ? 'text-white' : ''
     ]">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ title }}</h2>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ title }}</h2>
       <p
           :class="[
-        'text-xl mb-8 max-w-2xl mx-auto',
+        'text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto',
         darkMode ? 'opacity-95' : 'text-gray-700'
       ]">
         {{ description }}
       </p>
       <NuxtLink
           :to="buttonLink"
-          class="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors duration-200 shadow-lg"
+          class="inline-block px-6 md:px-8 py-3 md:py-4 bg-primary text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-dark transition-colors duration-200 shadow-lg"
       >
         {{ buttonText }}
       </NuxtLink>

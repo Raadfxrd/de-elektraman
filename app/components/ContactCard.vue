@@ -37,29 +37,30 @@ const availabilityText = computed(() => {
 
 <template>
   <div
-      class="group p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1 text-center">
-    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6 mx-auto">
-      <component :is="icon" class="w-8 h-8 text-primary"/>
+      class="group p-6 md:p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1 text-center">
+    <div
+        class="w-12 h-12 md:w-14 md:h-14 bg-primary-light rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
+      <component :is="icon" class="w-6 h-6 md:w-8 md:h-8 text-primary"/>
     </div>
 
-    <h3 class="text-2xl font-bold mb-3 text-secondary">{{ title }}</h3>
+    <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-secondary">{{ title }}</h3>
 
-    <p class="leading-relaxed text-gray-600 mb-4 text-sm">
+    <p class="leading-relaxed text-gray-600 mb-3 md:mb-4 text-xs md:text-sm">
       {{ subtitle }}
     </p>
 
     <a
         :href="contactLink"
-        class="block text-lg font-semibold text-primary hover:text-primary-dark transition-colors mb-2"
+        class="block text-base md:text-lg font-semibold text-primary hover:text-primary-dark transition-colors mb-2"
     >
       {{ contactText }}
     </a>
 
-    <p class="text-sm text-gray-600 mb-4">
+    <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">
       {{ description }}
     </p>
 
-    <div class="mt-4 pt-4 border-t border-gray-100">
+    <div class="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-gray-100">
       <span
           v-if="isAvailable"
           class="inline-flex items-center gap-1 text-xs font-semibold text-primary"

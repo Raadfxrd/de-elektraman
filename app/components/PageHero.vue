@@ -32,7 +32,7 @@ withDefaults(defineProps<Props>(), {
       ]">
         <!-- Left Content -->
         <div class="space-y-6">
-          <h1 class="text-5xl md:text-6xl font-bold leading-tight text-secondary">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary">
             <template v-if="highlightText">
               {{ title }} <span class="text-primary">{{ highlightText }}</span>
             </template>
@@ -42,7 +42,7 @@ withDefaults(defineProps<Props>(), {
           </h1>
           <p
               :class="[
-            'text-xl leading-relaxed',
+            'text-base sm:text-lg md:text-xl leading-relaxed',
             compact ? 'text-gray-700' : 'text-gray-600'
           ]">
             {{ description }}
