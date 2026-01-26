@@ -164,7 +164,7 @@ const closeModal = () => {
     <PageHero
         title="Ons"
         highlight-text="Portfolio"
-        description="Verken honderden succesvolle projecten in residentiële, commerciële en industriële instellingen. Elk project is een testament van onze expertise en toewijding."
+        description="Verken alle succesvolle projecten in residentiële, commerciële en industriële instellingen. Elk project is een testament van onze expertise en toewijding."
         :compact="true"
     />
 
@@ -195,16 +195,15 @@ const closeModal = () => {
         <!-- Masonry Grid -->
         <div
             :class="[
-          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max transition-all duration-100',
+          'columns-1 md:columns-2 lg:columns-3 gap-6 transition-all duration-100',
           isFilterChanging ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         ]">
           <div
               v-for="(project, index) in filteredProjects"
               :key="project.id"
               :class="[
-                'group relative rounded-xl overflow-hidden cursor-pointer h-80 transition-all duration-300 hover:shadow-2xl',
-                index % 5 === 0 ? 'md:col-span-2 md:row-span-2 h-96 md:h-auto' : '',
-                index % 5 === 3 ? 'md:col-span-2 h-96' : ''
+                'group relative rounded-xl overflow-hidden cursor-pointer mb-6 break-inside-avoid transition-all duration-300 hover:shadow-2xl',
+                index % 7 === 0 || index % 7 === 4 ? 'h-150' : 'h-100'
               ]"
               @click="openModal(project)"
           >
@@ -252,7 +251,7 @@ const closeModal = () => {
           @click="closeModal"
       >
         <div
-            class="relative w-full max-w-4xl max-h-screen overflow-auto rounded-2xl bg-white shadow-2xl"
+            class="relative w-full max-w-4xl max-h-[90vh] overflow-auto rounded-2xl bg-white shadow-2xl"
             @click.stop
         >
           <!-- Close Button -->
@@ -264,7 +263,7 @@ const closeModal = () => {
           </button>
 
           <!-- Image -->
-          <div class="relative w-full h-96 md:h-screen md:max-h-[70vh] overflow-hidden bg-secondary">
+          <div class="relative w-full h-96 md:h-screen md:max-h-[50vh] overflow-hidden bg-secondary">
             <img
                 :src="selectedProject.images[selectedImageIndex]"
                 :alt="selectedProject.title"
