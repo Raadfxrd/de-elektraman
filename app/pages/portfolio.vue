@@ -82,6 +82,7 @@ const selectedProject = ref<Project | null>(null)
 const selectedProjectIndex = ref<number>(-1)
 const selectedImageIndex = ref<number>(0)
 const isProjectChanging = ref(false)
+const isFilterChanging = ref(false)
 
 const filteredProjects = computed(() => {
   if (selectedCategory.value === 'Alles') {
@@ -89,6 +90,18 @@ const filteredProjects = computed(() => {
   }
   return projects.value.filter(p => p.category === selectedCategory.value)
 })
+
+const selectCategory = (category: string) => {
+  if (category === selectedCategory.value) return
+
+  isFilterChanging.value = true
+  setTimeout(() => {
+    selectedCategory.value = category
+    setTimeout(() => {
+      isFilterChanging.value = false
+    }, 50)
+  }, 200)
+}
 
 const nextProject = () => {
   if (selectedProjectIndex.value >= 0 && selectedProjectIndex.value < filteredProjects.value.length - 1) {
@@ -175,7 +188,7 @@ const closeModal = () => {
                   ? 'bg-primary text-white shadow-lg'
                   : 'border-2 border-border text-secondary hover:border-primary'
               ]"
-              @click="selectedCategory = category"
+              @click="selectCategory(category)"
           >
             {{ category }}
           </button>
@@ -187,7 +200,10 @@ const closeModal = () => {
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <!-- Masonry Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+        <div :class="[
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max transition-all duration-100',
+          isFilterChanging ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+        ]">
           <div
               v-for="(project, index) in filteredProjects"
               :key="project.id"
