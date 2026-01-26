@@ -5,10 +5,12 @@
       <slot/>
     </main>
     <AppFooter/>
+    <BackToTop/>
   </div>
 </template>
 
 <script setup lang="ts">
 import AppNavbar from "~/components/AppNavbar.vue";
 import AppFooter from "~/components/AppFooter.vue";
+import BackToTop from "~/components/BackToTop.vue";
 </script>
