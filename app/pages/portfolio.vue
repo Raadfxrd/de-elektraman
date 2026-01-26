@@ -161,19 +161,12 @@ const closeModal = () => {
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-16 md:py-24 px-6">
-      <div class="container mx-auto">
-        <div class="max-w-3xl">
-          <h1 class="text-5xl md:text-6xl font-bold leading-tight text-secondary mb-6">
-            Ons <span class="text-primary">Portfolio</span>
-          </h1>
-          <p class="text-xl leading-relaxed text-gray-600">
-            Verken honderden succesvolle projecten in residentiële, commerciële en industriële instellingen. Elk project
-            is een testament van onze expertise en toewijding.
-          </p>
-        </div>
-      </div>
-    </section>
+    <PageHero
+        title="Ons"
+        highlight-text="Portfolio"
+        description="Verken honderden succesvolle projecten in residentiële, commerciële en industriële instellingen. Elk project is een testament van onze expertise en toewijding."
+        :compact="true"
+    />
 
     <!-- Category Filter -->
     <section class="py-8 px-6 border-b border-border sticky top-0 bg-white/95 backdrop-blur z-40">
@@ -200,7 +193,8 @@ const closeModal = () => {
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <!-- Masonry Grid -->
-        <div :class="[
+        <div
+            :class="[
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max transition-all duration-100',
           isFilterChanging ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         ]">
