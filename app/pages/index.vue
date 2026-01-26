@@ -7,7 +7,7 @@ const companyInfo = useCompanyInfo()
   <div>
     <!-- Hero Section -->
     <PageHero
-        title="Professionele Elektrische Diensten die U Kunt"
+        title="Professionele elektrische diensten die u kunt"
         highlight-text="Vertrouwen"
         description="Van installaties en onderhoud tot spoedeisende reparaties, De Elektraman levert deskundige elektrische diensten met precisie, betrouwbaarheid en professionaliteit."
         :show-image="true"
@@ -39,7 +39,7 @@ const companyInfo = useCompanyInfo()
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
-            title="Onze Diensten"
+            title="Onze diensten"
             description="Volledige elektrische oplossingen afgestemd op uw residentiële, commerciële of industriële behoeften"
         />
 
@@ -69,7 +69,7 @@ const companyInfo = useCompanyInfo()
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Waarom De Elektraman Kiezen?</h2>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Waarom De Elektraman kiezen?</h2>
           <p class="text-xl text-gray-700">
             We combineren jarenlange ervaring met moderne technieken om uitzonderlijke elektrische diensten te leveren
           </p>
@@ -101,9 +101,9 @@ const companyInfo = useCompanyInfo()
 
     <!-- CTA Section -->
     <CallToAction
-        title="Klaar om te Beginnen?"
+        title="Klaar om te beginnen?"
         description="Neem vandaag contact op met De Elektraman voor een gratis adviesgesprek en ontdek waarom bedrijven en huiseigenaren ons vertrouwen."
-        button-text="Offerte Aanvragen"
+        button-text="Offerte aanvragen"
         button-link="/contact"
         :dark-mode="true"
     />

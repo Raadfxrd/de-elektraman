@@ -13,7 +13,7 @@ import {
   <div>
     <!-- Hero Section -->
     <PageHero
-        title="Volledige Elektrische"
+        title="Volledige elektrische"
         highlight-text="Diensten"
         description="Van residentiële tot industriële projecten, De Elektraman biedt professionele en betrouwbare elektrische diensten."
         :compact="true"
@@ -23,7 +23,7 @@ import {
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
-            title="Onze Kernservices"
+            title="Onze kernservices"
             description="Alles wat u nodig heeft voor betrouwbare elektrische systemen"
         />
 
@@ -56,7 +56,7 @@ import {
     <section class="bg-primary-light py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
-            title="Gespecialiseerde Diensten"
+            title="Gespecialiseerde diensten"
             description="Voor verschillende soorten projecten en ruimtes"
         />
 
@@ -89,7 +89,7 @@ import {
     <section class="py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
-            title="Meer Diensten"
+            title="Meer diensten"
         />
 
         <div class="grid md:grid-cols-3 gap-6 mx-auto">
@@ -134,7 +134,7 @@ import {
 
     <!-- Service Process -->
     <ProcessSection
-        title="Hoe Wij Werken"
+        title="Hoe wij werken"
         description="Ons transparante en efficiënte proces"
         :steps="[
           { number: 1, title: 'Contact', description: 'Neem contact op via telefoon of formulier' },
@@ -146,9 +146,9 @@ import {
 
     <!-- CTA Section -->
     <CallToAction
-        title="Interesse in Onze Diensten?"
+        title="Interesse in onze diensten?"
         description="Neem vandaag contact op voor een gratis adviesgesprek en ontdek hoe wij u kunnen helpen."
-        button-text="Vraag een Offerte Aan"
+        button-text="Vraag een offerte aan"
         button-link="/contact"
     />
   </div>
