@@ -2,13 +2,14 @@
   <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
     <nav class="container mx-auto flex items-center justify-between py-5 px-6">
       <!-- Logo -->
-      <NuxtLink to="/" class="flex items-center gap-2">
+      <NuxtLink to="/" class="flex items-center gap-2 group">
         <img
             src="/logo.png"
             :alt="`${companyInfo.appName} Logo`"
             class="w-12 h-12 object-contain"
         >
-        <span class="text-xl font-bold text-gray-900 hover:text-primary transition-colors duration-200 tracking-tight">{{
+        <span
+            class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-200 tracking-tight">{{
             companyInfo.appName
           }}</span>
       </NuxtLink>
