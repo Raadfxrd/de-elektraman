@@ -68,8 +68,6 @@
         <p class="text-center md:text-left">© {{ currentYear }} {{ companyInfo.appName }} — Alle rechten
           voorbehouden.</p>
         <div class="flex gap-4 md:gap-6">
-          <a :href="companyInfo.social.linkedin" class="hover:text-primary transition-colors">LinkedIn</a>
-          <a :href="companyInfo.social.facebook" class="hover:text-primary transition-colors">Facebook</a>
           <a :href="companyInfo.social.instagram" class="hover:text-primary transition-colors">Instagram</a>
         </div>
       </div>
