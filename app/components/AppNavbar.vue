@@ -51,7 +51,7 @@
           to="/contact"
           class="hidden md:inline-block px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors duration-200 shadow-sm"
       >
-        Offerte anvragen
+        Offerte aanvragen
       </NuxtLink>
 
       <!-- Mobile Menu Button -->
@@ -140,7 +140,7 @@
                 @click="mobileMenuOpen = false"
                 class="block w-full px-6 py-3 bg-primary text-white text-center font-medium rounded-lg hover:bg-primary-dark transition-colors duration-200 shadow-sm"
             >
-              Offerte anvragen
+              Offerte aanvragen
             </NuxtLink>
           </li>
         </ul>
