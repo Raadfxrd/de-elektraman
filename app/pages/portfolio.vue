@@ -25,7 +25,7 @@ const projects = ref<Project[]>([
   {
     id: 3,
     images: ['/grote-batterijen/grote-batterijen-1.jpeg', '/grote-batterijen/grote-batterijen-2.jpeg', '/grote-batterijen/grote-batterijen-3.jpeg', '/grote-batterijen/grote-batterijen-4.jpeg', '/grote-batterijen/grote-batterijen-5.jpeg', '/grote-batterijen/grote-batterijen-6.jpeg'],
-    title: 'Grote batterijen (40.8+ kW)',
+    title: 'Grote batterijen (Vanaf 40.8 kW)',
     category: 'Commercieel',
   },
   {
@@ -37,7 +37,7 @@ const projects = ref<Project[]>([
   {
     id: 5,
     images: ['/kleine-laadpalen/kleine-laadpalen-1.jpeg', '/kleine-laadpalen/kleine-laadpalen-2.jpeg', '/kleine-laadpalen/kleine-laadpalen-3.jpeg'],
-    title: 'Kleine laadpalen (3,7 kW - 22 kW',
+    title: 'Kleine laadpalen (3,7 kW - 22 kW)',
     category: 'Residentieel',
   },
   {
