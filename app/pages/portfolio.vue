@@ -245,122 +245,130 @@ const closeModal = () => {
     </section>
 
     <!-- Modal -->
-    <Teleport v-if="selectedProject" to="body">
-      <div
-          class="fixed inset-0 bg-secondary/80 backdrop-blur z-50 flex items-center justify-center p-2 md:p-4 animate-fade-in"
-          @click="closeModal"
+    <Teleport to="body">
+      <Transition
+          appear
+          enter-active-class="transition-opacity duration-200 ease-out motion-reduce:transition-none"
+          enter-from-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-active-class="transition-opacity duration-200 ease-in motion-reduce:transition-none"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
       >
         <div
-            class="relative w-full max-w-4xl max-h-[95vh] md:max-h-[90vh] overflow-auto rounded-xl md:rounded-2xl bg-white shadow-2xl"
-            @click.stop
+            v-if="selectedProject"
+            class="fixed inset-0 bg-secondary/80 backdrop-blur z-50 flex items-center justify-center p-2 md:p-4"
+            @click="closeModal"
         >
-          <!-- Close Button -->
-          <button
-              class="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
-              @click="closeModal"
+          <Transition
+              appear
+              enter-active-class="transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+              enter-from-class="opacity-0 translate-y-2 scale-95"
+              enter-to-class="opacity-100 translate-y-0 scale-100"
+              leave-active-class="transition-all duration-200 ease-in motion-reduce:transition-none"
+              leave-from-class="opacity-100 translate-y-0 scale-100"
+              leave-to-class="opacity-0 translate-y-2 scale-95"
           >
-            <XMarkIcon class="w-6 h-6 text-secondary"/>
-          </button>
-
-          <!-- Image -->
-          <div class="relative w-full h-64 sm:h-80 md:h-96 lg:h-[50vh] overflow-hidden bg-secondary">
-            <img
-                :alt="selectedProject.title"
-                :class="['w-full h-full object-cover transition-opacity duration-300', isProjectChanging ? 'opacity-0' : 'opacity-100']"
-                :src="selectedProject.images[selectedImageIndex]"
-            >
-
-            <!-- Image Navigation Buttons -->
-            <button
-                v-if="selectedProject.images.length > 1 && selectedImageIndex > 0"
-                class="absolute left-2 md:left-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
-                aria-label="Vorige foto"
-                title="Vorige foto"
-                @click="prevImage"
-            >
-              <ChevronLeftIcon class="w-5 h-5 md:w-6 md:h-6"/>
-              <span>Vorige foto</span>
-            </button>
-            <button
-                v-if="selectedProject.images.length > 1 && selectedImageIndex < selectedProject.images.length - 1"
-                class="absolute right-2 md:right-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
-                aria-label="Volgende foto"
-                title="Volgende foto"
-                @click="nextImage"
-            >
-              <ChevronRightIcon class="w-5 h-5 md:w-6 md:h-6"/>
-              <span>Volgende foto</span>
-            </button>
-
-            <!-- Image Counter -->
             <div
-                v-if="selectedProject.images.length > 1"
-                class="absolute bottom-2 md:bottom-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm"
+                class="relative w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl max-h-[94vh] lg:max-h-[92vh] overflow-auto rounded-xl md:rounded-2xl bg-white shadow-2xl"
+                @click.stop
             >
-              {{ selectedImageIndex + 1 }} / {{ selectedProject.images.length }}
-            </div>
+              <!-- Close Button -->
+              <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
+                  @click="closeModal"
+              >
+                <XMarkIcon class="w-6 h-6 text-secondary"/>
+              </button>
 
-            <!-- Project Navigation Buttons -->
-            <button
-                v-if="selectedProjectIndex > 0"
-                class="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background rounded-full items-center justify-center transition-all shadow-lg"
-                @click="prevProject"
-            >
-              <ChevronLeftIcon class="w-6 h-6 text-secondary"/>
-            </button>
-            <button
-                v-if="selectedProjectIndex < filteredProjects.length - 1"
-                class="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background rounded-full items-center justify-center transition-all shadow-lg"
-                @click="nextProject"
-            >
-              <ChevronRightIcon class="w-6 h-6 text-secondary"/>
-            </button>
-          </div>
+              <!-- Image -->
+              <div
+                  class="relative w-full h-64 sm:h-80 md:h-96 lg:h-[56vh] xl:h-[60vh] 2xl:h-[64vh] overflow-hidden bg-secondary">
+                <img
+                    :alt="selectedProject.title"
+                    :class="['w-full h-full object-cover transition-opacity duration-300', isProjectChanging ? 'opacity-0' : 'opacity-100']"
+                    :src="selectedProject.images[selectedImageIndex]"
+                >
 
-          <!-- Content -->
-          <div
-              :class="['p-6 md:p-8 lg:p-12 transition-opacity duration-300', isProjectChanging ? 'opacity-0' : 'opacity-100']">
-            <div class="flex items-center gap-3 mb-4">
+                <!-- Image Navigation Buttons -->
+                <button
+                    v-if="selectedProject.images.length > 1 && selectedImageIndex > 0"
+                    class="absolute left-2 md:left-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
+                    aria-label="Vorige foto"
+                    title="Vorige foto"
+                    @click="prevImage"
+                >
+                  <ChevronLeftIcon class="w-5 h-5 md:w-6 md:h-6"/>
+                  <span>Vorige foto</span>
+                </button>
+                <button
+                    v-if="selectedProject.images.length > 1 && selectedImageIndex < selectedProject.images.length - 1"
+                    class="absolute right-2 md:right-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
+                    aria-label="Volgende foto"
+                    title="Volgende foto"
+                    @click="nextImage"
+                >
+                  <ChevronRightIcon class="w-5 h-5 md:w-6 md:h-6"/>
+                  <span>Volgende foto</span>
+                </button>
+
+                <!-- Image Counter -->
+                <div
+                    v-if="selectedProject.images.length > 1"
+                    class="absolute bottom-2 md:bottom-6 left-1/2 -translate-x-1/2 bg-secondary/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm"
+                >
+                  {{ selectedImageIndex + 1 }} / {{ selectedProject.images.length }}
+                </div>
+
+                <!-- Project Navigation Buttons -->
+                <button
+                    v-if="selectedProjectIndex > 0"
+                    class="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background rounded-full items-center justify-center transition-all shadow-lg"
+                    @click="prevProject"
+                >
+                  <ChevronLeftIcon class="w-6 h-6 text-secondary"/>
+                </button>
+                <button
+                    v-if="selectedProjectIndex < filteredProjects.length - 1"
+                    class="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background rounded-full items-center justify-center transition-all shadow-lg"
+                    @click="nextProject"
+                >
+                  <ChevronRightIcon class="w-6 h-6 text-secondary"/>
+                </button>
+              </div>
+
+              <!-- Content -->
+              <div
+                  :class="['p-6 md:p-8 lg:p-12 transition-opacity duration-300', isProjectChanging ? 'opacity-0' : 'opacity-100']">
+                <div class="flex items-center gap-3 mb-4">
               <span
                   class="px-3 md:px-4 py-1 bg-primary-light text-primary text-xs md:text-sm font-semibold rounded-full">
                 {{ selectedProject.category }}
               </span>
-              <span class="text-xs md:text-sm text-gray-500">
+                  <span class="text-xs md:text-sm text-gray-500">
                 {{ selectedProjectIndex + 1 }} / {{ filteredProjects.length }}
               </span>
-            </div>
+                </div>
 
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3 md:mb-4">{{
-                selectedProject.title
-              }}</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3 md:mb-4">{{
+                    selectedProject.title
+                  }}</h2>
 
-            <!-- CTA -->
-            <div class="border-t border-border pt-6 md:pt-8 flex justify-center">
-              <NuxtLink
-                  class="inline-block w-full sm:w-auto text-center px-6 md:px-8 py-3 md:py-4 bg-primary text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-dark transition-colors shadow-lg"
-                  to="/contact"
-              >
-                Soortgelijk Project Aanvragen
-              </NuxtLink>
+                <!-- CTA -->
+                <div class="border-t border-border pt-6 md:pt-8 flex justify-center">
+                  <NuxtLink
+                      class="inline-block w-full sm:w-auto text-center px-6 md:px-8 py-3 md:py-4 bg-primary text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-dark transition-colors shadow-lg"
+                      :to="{ path: '/contact', hash: '#contact-form', query: { category: selectedProject.category } }"
+                  >
+                    Soortgelijk Project Aanvragen
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
-          </div>
+          </Transition>
         </div>
-      </div>
+      </Transition>
     </Teleport>
   </div>
 </template>
 
-<style scoped>
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out;
-}
-</style>

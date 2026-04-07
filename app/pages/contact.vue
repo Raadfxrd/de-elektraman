@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {BoltIcon, CheckBadgeIcon, ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon} from '@heroicons/vue/24/solid'
-import {ref} from 'vue'
+import {nextTick, onMounted, ref, watch} from 'vue'
 
 const companyInfo = useCompanyInfo()
+const route = useRoute()
+const nameInput = ref<HTMLInputElement | null>(null)
 
 const formData = ref({
   name: '',
@@ -17,11 +19,44 @@ const serviceTypes = [
   'Algemene Vraag',
   'Residentiële Installatie',
   'Commercieel Project',
-  'Industrieel Project',
   'Onderhoud & Inspectie',
-  'Spoedreparatie',
+  'Storingsdienst',
   'Offerte Aanvraag'
 ]
+
+const mapCategoryToServiceType = (categoryValue: string | null | Array<string | null> | undefined) => {
+  const rawValue = Array.isArray(categoryValue) ? categoryValue[0] : categoryValue
+  if (!rawValue) return null
+
+  const normalized = rawValue.trim().toLowerCase()
+  const categoryMap: Record<string, string> = {
+    residentieel: 'Residentiële installatie',
+    commercieel: 'Commercieel project',
+    onderhoud: 'Onderhoud of inspectie',
+  }
+
+  return categoryMap[normalized] ?? null
+}
+
+const applyRouteFormState = async () => {
+  const mappedServiceType = mapCategoryToServiceType(route.query.category)
+  if (mappedServiceType) {
+    formData.value.serviceType = mappedServiceType
+  }
+
+  if (route.hash === '#contact-form' || mappedServiceType) {
+    await nextTick()
+    nameInput.value?.focus()
+  }
+}
+
+onMounted(() => {
+  void applyRouteFormState()
+})
+
+watch(() => [route.hash, route.query.category], () => {
+  void applyRouteFormState()
+})
 </script>
 
 <template>
@@ -74,7 +109,8 @@ const serviceTypes = [
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
 
           <!-- Left - Contact Form -->
-          <div class="bg-gray-50 rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-12 border border-border">
+          <div id="contact-form"
+               class="bg-gray-50 rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-12 border border-border scroll-mt-28 md:scroll-mt-32">
             <div class="mb-6 md:mb-8">
               <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3">Stuur een bericht</h2>
               <p class="text-gray-700 text-base md:text-lg">
@@ -90,6 +126,7 @@ const serviceTypes = [
                 </label>
                 <input
                     id="name"
+                    ref="nameInput"
                     v-model="formData.name"
                     type="text"
                     required
