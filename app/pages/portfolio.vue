@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {computed, ref} from 'vue'
 import {ChevronLeftIcon, ChevronRightIcon, SparklesIcon, XMarkIcon} from '@heroicons/vue/24/solid'
 
@@ -7,76 +7,78 @@ interface Project {
   images: string[]
   title: string
   category: string
-  description: string
 }
 
 const projects = ref<Project[]>([
   {
     id: 1,
-    images: ['/img-portfolio-1.jpeg', '/img-portfolio-5.jpeg', '/img-portfolio-9.jpeg'],
-    title: 'Residentiële Installaties',
+    images: ['/elektra-aanleg/elektra-aanleg-1.jpeg', '/elektra-aanleg/elektra-aanleg-4.jpeg', '/elektra-aanleg/elektra-aanleg-2.jpeg', '/elektra-aanleg/elektra-aanleg-3.jpeg'],
+    title: 'Elektra aanleg',
     category: 'Residentieel',
-    description: 'Volledige elektrische installaties in moderne woonhuizen met slimme verlichting en huisautomatisering.'
   },
   {
     id: 2,
-    images: ['/img-portfolio-6.jpeg', '/img-portfolio-10.jpeg'],
-    title: 'Commerciële Installaties',
-    category: 'Commercieel',
-    description: 'Professionele bedrading, LED verlichting en beveiligingssystemen voor kantoorruimtes en winkels.'
+    images: ['/groepskast/groepskast-2.jpeg', '/groepskast/groepskast-1.jpeg', '/groepskast/groepskast-3.jpeg', '/groepskast/groepskast-4.jpeg', '/groepskast/groepskast-5.jpeg'],
+    title: 'Groepskast vervangen/aanleggen',
+    category: 'Residentieel',
   },
   {
     id: 3,
-    images: ['/img-portfolio-3.jpeg', '/img-portfolio-11.jpeg', '/img-portfolio-13.jpeg'],
-    title: 'Onderhoud & Inspectie',
-    category: 'Onderhoud',
-    description: 'Regelmatige veiligheidsinspectie, preventief onderhoud en aarding inspecties.'
+    images: ['/grote-batterijen/grote-batterijen-1.jpeg', '/grote-batterijen/grote-batterijen-2.jpeg', '/grote-batterijen/grote-batterijen-3.jpeg', '/grote-batterijen/grote-batterijen-4.jpeg', '/grote-batterijen/grote-batterijen-5.jpeg', '/grote-batterijen/grote-batterijen-6.jpeg'],
+    title: 'Grote batterijen (40.8+ kW)',
+    category: 'Commercieel',
   },
   {
     id: 4,
-    images: ['/img-portfolio-4.jpeg', '/img-portfolio-12.jpeg', '/img-portfolio-16.jpeg'],
-    title: 'Industriële Projecten',
-    category: 'Industrieel',
-    description: 'Geavanceerde schakelkasten, fabrieksinstallaties en distributiekasten voor industriële productie.'
+    images: ['/grote-laadpalen/grote-laadpalen-4.jpeg', '/grote-laadpalen/grote-laadpalen-2.jpeg', '/grote-laadpalen/grote-laadpalen-3.jpeg', '/grote-laadpalen/grote-laadpalen-1.jpeg'],
+    title: 'Grote laadpalen (3,7 kW - 720 kW)',
+    category: 'Commercieel',
   },
   {
     id: 5,
-    images: ['/img-portfolio-7.jpeg', '/img-portfolio-15.jpeg', '/img-portfolio-19.jpeg'],
-    title: 'Woning Modernisering',
+    images: ['/kleine-laadpalen/kleine-laadpalen-1.jpeg', '/kleine-laadpalen/kleine-laadpalen-2.jpeg', '/kleine-laadpalen/kleine-laadpalen-3.jpeg'],
+    title: 'Kleine laadpalen (3,7 kW - 22 kW',
     category: 'Residentieel',
-    description: 'Zonne-energie installaties, woningupgrades en dakkapel elektriciteit.'
   },
   {
     id: 6,
-    images: ['/img-portfolio-8.jpeg', '/img-portfolio-14.jpeg', '/img-portfolio-17.jpeg'],
-    title: 'Commerciële Renovatie',
-    category: 'Commercieel',
-    description: 'Noodstroomvoeding, kantoorenrenovaties en installaties voor restaurants.'
+    images: ['/led-verlichting/led-verlichting.jpeg'],
+    title: 'LED-verlichting',
+    category: 'Onderhoud',
   },
   {
     id: 7,
-    images: ['/img-portfolio-18.jpeg', '/img-portfolio-20.jpeg', '/img-portfolio-23.jpeg'],
-    title: 'Technische Diensten',
+    images: ['/storing/storing-1.jpeg', '/storing/storing-2.jpeg', '/storing/storing-3.jpeg'],
+    title: 'Storing',
     category: 'Onderhoud',
-    description: 'Motoraansluitingen, spoedeisende reparaties en diagnostiek met professionele testapparatuur.'
   },
   {
     id: 8,
-    images: ['/img-portfolio-21.jpeg', '/img-portfolio-24.jpeg', '/img-portfolio-25.jpeg'],
-    title: 'Geavanceerde Projecten',
+    images: ['/thuisbatterijen/thuisbatterijen-4.jpeg', '/thuisbatterijen/thuisbatterijen-2.jpeg', '/thuisbatterijen/thuisbatterijen-1.jpeg', '/thuisbatterijen/thuisbatterijen-3.jpeg'],
+    title: 'Thuisbatterijen (Tot 40,8 kW)',
     category: 'Residentieel',
-    description: 'EV laadstations, nieuwbouwprojecten en warehouse verlichting systemen.'
   },
   {
     id: 9,
-    images: ['/img-portfolio-22.jpeg', '/img-portfolio-26.jpeg', '/img-portfolio-27.jpeg'],
-    title: 'Kritische Systemen',
+    images: ['/verdeel-inrichting/verdeel-inrichting-3.jpeg', '/verdeel-inrichting/verdeel-inrichting-2.jpeg', '/verdeel-inrichting/verdeel-inrichting-1.jpeg', '/verdeel-inrichting/verdeel-inrichting-4.jpeg'],
+    title: 'Verdeel inrichting',
     category: 'Commercieel',
-    description: 'Installaties voor loodgietersbedrijven, ziekenhuizen en fitnesscentra.'
+  },
+  {
+    id: 10,
+    images: ['/verlichting-design/verlichting-design-1.jpeg', '/verlichting-design/verlichting-design-2.jpeg', '/verlichting-design/verlichting-design-3.jpeg', '/verlichting-design/verlichting-design-4.jpeg', '/verlichting-design/verlichting-design-5.jpeg'],
+    title: 'Verlichting design',
+    category: 'Residentieel',
+  },
+  {
+    id: 11,
+    images: ['/zonne-energie/zonne-energie-1.jpeg', '/zonne-energie/zonne-energie-2.jpeg', '/zonne-energie/zonne-energie-3.jpeg', '/zonne-energie/zonne-energie-4.jpeg', '/zonne-energie/zonne-energie-5.jpeg', '/zonne-energie/zonne-energie-6.jpeg'],
+    title: 'Zonne-energie',
+    category: 'Residentieel',
   },
 ])
 
-const categories = ref(['Alles', 'Residentieel', 'Commercieel', 'Industrieel', 'Onderhoud'])
+const categories = ref(['Alles', 'Residentieel', 'Commercieel', 'Onderhoud'])
 const selectedCategory = ref('Alles')
 const selectedProject = ref<Project | null>(null)
 const selectedProjectIndex = ref<number>(-1)
@@ -162,10 +164,10 @@ const closeModal = () => {
   <div>
     <!-- Hero Section -->
     <PageHero
-        title="Ons"
-        highlight-text="Portfolio"
-        description="Verken alle succesvolle projecten in residentiële, commerciële en industriële instellingen. Elk project is een testament van onze expertise en toewijding."
         :compact="true"
+        description="Verken alle succesvolle projecten in residentiële en commerciële instellingen. Elk project is een testament van onze expertise en toewijding."
+        highlight-text="Portfolio"
+        title="Ons"
     />
 
     <!-- Category Filter -->
@@ -210,8 +212,8 @@ const closeModal = () => {
           >
             <!-- Image -->
             <img
-                :src="project.images[0]"
                 :alt="project.title"
+                :src="project.images[0]"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             >
 
@@ -226,9 +228,6 @@ const closeModal = () => {
             >
               <span class="text-primary text-sm font-semibold mb-2">{{ project.category }}</span>
               <h3 class="text-white text-2xl font-bold mb-2">{{ project.title }}</h3>
-              <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {{ project.description }}
-              </p>
               <div
                   class="mt-4 flex items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span class="text-sm font-semibold">Bekijk Details</span>
@@ -266,25 +265,31 @@ const closeModal = () => {
           <!-- Image -->
           <div class="relative w-full h-64 sm:h-80 md:h-96 lg:h-[50vh] overflow-hidden bg-secondary">
             <img
-                :src="selectedProject.images[selectedImageIndex]"
                 :alt="selectedProject.title"
                 :class="['w-full h-full object-cover transition-opacity duration-300', isProjectChanging ? 'opacity-0' : 'opacity-100']"
+                :src="selectedProject.images[selectedImageIndex]"
             >
 
             <!-- Image Navigation Buttons -->
             <button
                 v-if="selectedProject.images.length > 1 && selectedImageIndex > 0"
-                class="absolute left-2 md:left-6 bottom-2 md:bottom-6 w-10 h-10 md:w-12 md:h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-all shadow-lg text-white"
+                class="absolute left-2 md:left-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
+                aria-label="Vorige foto"
+                title="Vorige foto"
                 @click="prevImage"
             >
               <ChevronLeftIcon class="w-5 h-5 md:w-6 md:h-6"/>
+              <span>Vorige foto</span>
             </button>
             <button
                 v-if="selectedProject.images.length > 1 && selectedImageIndex < selectedProject.images.length - 1"
-                class="absolute right-2 md:right-6 bottom-2 md:bottom-6 w-10 h-10 md:w-12 md:h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center transition-all shadow-lg text-white"
+                class="absolute right-2 md:right-6 bottom-2 md:bottom-6 h-10 md:h-12 px-3 md:px-4 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-all shadow-lg text-white text-xs md:text-sm font-semibold"
+                aria-label="Volgende foto"
+                title="Volgende foto"
                 @click="nextImage"
             >
               <ChevronRightIcon class="w-5 h-5 md:w-6 md:h-6"/>
+              <span>Volgende foto</span>
             </button>
 
             <!-- Image Counter -->
@@ -328,15 +333,12 @@ const closeModal = () => {
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3 md:mb-4">{{
                 selectedProject.title
               }}</h2>
-            <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
-              {{ selectedProject.description }}
-            </p>
 
             <!-- CTA -->
             <div class="border-t border-border pt-6 md:pt-8 flex justify-center">
               <NuxtLink
-                  to="/contact"
                   class="inline-block w-full sm:w-auto text-center px-6 md:px-8 py-3 md:py-4 bg-primary text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-dark transition-colors shadow-lg"
+                  to="/contact"
               >
                 Soortgelijk Project Aanvragen
               </NuxtLink>
