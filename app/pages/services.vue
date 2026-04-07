@@ -32,20 +32,20 @@ import {
               :icon="BoltIcon"
               title="Installaties"
               description="Professionele installatie van elektrische systemen, verlichting, bedrading en moderne smart home-oplossingen."
-              :features="['Nieuwbouw en renovaties', 'Smart home integratie', 'Zonne-energie systemen']"
+              :features="['Nieuwbouw en renovaties', 'Zonne-energie systemen', 'Batterij-opslag systemen', 'Laadpalen']"
           />
 
           <ServiceCard
               :icon="WrenchScrewdriverIcon"
               title="Onderhoud & Inspectie"
               description="Regelmatig onderhoud, veiligheidscontroles en preventieve diensten om uw systemen soepel te laten werken."
-              :features="['Periodieke controles', 'Veiligheidscertificering', 'Preventief onderhoud']"
+              :features="['Periodieke controles', 'Veiligheidscertificering', 'Periodieke controle NEN1010 scope 8', 'Veiligheid woning inspectie NEN8025']"
           />
 
           <ServiceCard
               :icon="ExclamationTriangleIcon"
-              title="Spoedreparaties"
-              description="24/7 spoedeisende respons voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
+              title="Storingsdienst"
+              description="24/7 Storingsdienst voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
               :features="['24/7 beschikbaarheid', 'Snelle responstijd', 'Noodreparaties']"
           />
         </div>
@@ -60,73 +60,19 @@ import {
             description="Voor verschillende soorten projecten en ruimtes"
         />
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <SpecializedServiceCard
               :icon="HomeIcon"
               title="Residentieel"
               description="Huizen en appartementen voorzien van veilige, moderne elektrische systemen."
-              :features="['Huisbedrading', 'Verlichting design', 'Huisautomatisering', 'EV laadstations']"
+              :features="['Elektra renovatie/aanleggen', 'Verlichting design', 'Huisautomatisering', 'EV laadstations 3,7kW tot 22kW', 'Energie opslag systeem 5.1 kWh tot 40.8 kWh', 'Zonne-energie systeem', 'Groepenkast vervangen', '1 Fase naar 3 fase', 'Aardpen slaan']"
           />
 
           <SpecializedServiceCard
               :icon="BuildingOfficeIcon"
               title="Commercieel"
               description="Kantoren en winkels met betrouwbare en efficiënte elektriciteit."
-              :features="['Bedrijfsbedrading', 'LED verlichting', 'Noodstroomaggregaten', 'Beveiligingssystemen']"
-          />
-
-          <SpecializedServiceCard
-              :icon="CogIcon"
-              title="Industrieel"
-              description="Fabricages en grote faciliteiten met geavanceerde elektrische oplossingen."
-              :features="['Motorkrachten', 'Schakelkasten', 'Automatisering', '3-fase systemen']"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Additional Services -->
-    <section class="py-12 md:py-20 px-6">
-      <div class="container mx-auto">
-        <SectionHeader
-            title="Meer diensten"
-        />
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Stekkercontacten & Schakelaars"
-              description="Veilige installatie en vervanging van alle types."
-          />
-
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Verlichting & Lampinstallatie"
-              description="Van standaard tot decoratieve verlichtingoplossingen."
-          />
-
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Aardingsonderzoeken"
-              description="Veiligheidstesten en certificering."
-          />
-
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Apparaatinstallatie"
-              description="Veilige aansluiting van grote huishoudapparaten."
-          />
-
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Beveiligingssystemen"
-              description="CCTV en beveiligingsinstallatie."
-          />
-
-          <SmallServiceCard
-              :icon="SparklesIcon"
-              title="Testingen & Diagnostiek"
-              description="Grondige systeemanalyse en probleemoplossing."
+              :features="['Elektra renovatie/aanleggen', 'LED verlichting', 'Noodstroom voorziening', 'AC & DC EV laadstation 3,7 kW tot 720kW', 'Energie opslag 40.8kWh tot 512kWh', 'Aardpen slaan', 'Capaciteit vergroting (Netcongestie)', 'Verdeel inrichting']"
           />
         </div>
       </div>

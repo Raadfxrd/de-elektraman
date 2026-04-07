@@ -17,7 +17,7 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-      class="p-6 md:p-8 rounded-xl bg-white border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+      class="p-6 md:p-8 rounded-xl bg-white border border-border">
     <div
         :class="[
       'w-12 h-12 md:w-16 md:h-16 bg-primary-light rounded-lg flex items-center justify-center mb-4 md:mb-6',

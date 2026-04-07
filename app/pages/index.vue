@@ -29,7 +29,7 @@ const companyInfo = useCompanyInfo()
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold mb-2 text-primary">{{ companyInfo.hours.emergency }}</div>
-            <p class="text-sm md:text-base text-gray-700">Spoedeisende Dienst</p>
+            <p class="text-sm md:text-base text-gray-700">Storingsdienst</p>
           </div>
         </div>
       </div>
@@ -58,8 +58,8 @@ const companyInfo = useCompanyInfo()
 
           <ServiceCard
               :icon="ExclamationTriangleIcon"
-              title="Spoedreparaties"
-              description="24/7 spoedeisende respons voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
+              title="Storingsdienst"
+              description="24/7 Storingsdienst voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
           />
         </div>
       </div>
