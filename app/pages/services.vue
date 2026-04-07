@@ -72,7 +72,7 @@ import {
               :icon="BuildingOfficeIcon"
               title="Commercieel"
               description="Kantoren en winkels met betrouwbare en efficiënte elektriciteit."
-              :features="['Elektra renovatie/aanleggen', 'LED verlichting', 'Noodstroom voorziening', 'AC & DC EV laadstation 3,7 kW tot 720kW', 'Energie opslag 40.8kWh tot 512kWh', 'Aardpen slaan', 'Capaciteit vergroting (Netcongestie)', 'Verdeel inrichting']"
+              :features="['Elektra renovatie/aanleggen', 'LED verlichting', 'Noodstroom voorziening', 'AC & DC EV laadstation 22 kW tot 720kW', 'Energie opslag 40.8kWh tot 512kWh', 'Aardpen slaan', 'Capaciteit vergroting (Netcongestie)', 'Verdeel inrichting']"
           />
         </div>
       </div>

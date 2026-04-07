@@ -31,7 +31,7 @@ const projects = ref<Project[]>([
   {
     id: 4,
     images: ['/grote-laadpalen/grote-laadpalen-4.jpeg', '/grote-laadpalen/grote-laadpalen-2.jpeg', '/grote-laadpalen/grote-laadpalen-3.jpeg', '/grote-laadpalen/grote-laadpalen-1.jpeg'],
-    title: 'Grote laadpalen (3,7 kW - 720 kW)',
+    title: 'Grote laadpalen (22 kW - 720 kW)',
     category: 'Commercieel',
   },
   {
