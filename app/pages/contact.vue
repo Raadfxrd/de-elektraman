@@ -83,7 +83,7 @@ watch(() => [route.hash, route.query.category], () => {
 
           <ContactCard
               :icon="EnvelopeIcon"
-              title="Stuur een E-mail"
+              title="Stuur een e-mail"
               subtitle="We reageren snel"
               :contact-text="companyInfo.email"
               :contact-link="`mailto:${companyInfo.email}`"
@@ -122,7 +122,7 @@ watch(() => [route.hash, route.query.category], () => {
               <!-- Name -->
               <div>
                 <label for="name" class="block text-sm font-bold text-gray-800 mb-2">
-                  Volledige Naam *
+                  Volledige naam *
                 </label>
                 <input
                     id="name"
@@ -167,7 +167,7 @@ watch(() => [route.hash, route.query.category], () => {
               <!-- Service Type -->
               <div>
                 <label for="serviceType" class="block text-sm font-bold text-gray-800 mb-2">
-                  Type Dienst *
+                  Type dienst *
                 </label>
                 <select
                     id="serviceType"
@@ -199,7 +199,7 @@ watch(() => [route.hash, route.query.category], () => {
               <!-- Message -->
               <div>
                 <label for="message" class="block text-sm font-bold text-gray-800 mb-2">
-                  Uw Bericht *
+                  Uw bericht *
                 </label>
                 <textarea
                     id="message"
@@ -243,7 +243,7 @@ watch(() => [route.hash, route.query.category], () => {
                     </div>
                   </div>
                   <div>
-                    <h4 class="text-xl font-bold mb-2 text-white">Gecertificeerd & Verzekerd</h4>
+                    <h4 class="text-xl font-bold mb-2 text-white">Gecertificeerd & verzekerd</h4>
                     <p class="text-white/90">Alle werkzaamheden worden uitgevoerd volgens de hoogste
                       veiligheidsnormen.</p>
                   </div>
@@ -282,7 +282,7 @@ watch(() => [route.hash, route.query.category], () => {
                 <span class="text-xs font-bold uppercase tracking-wider text-red">Noodgeval</span>
               </div>
 
-              <h3 class="text-xl md:text-2xl font-bold mb-3 text-secondary">24/7 Spoedservice</h3>
+              <h3 class="text-xl md:text-2xl font-bold mb-3 text-secondary">24/7 Storingsdienst</h3>
 
               <p class="text-gray-700 text-sm md:text-base mb-6 leading-relaxed">
                 Elektrische storing of noodsituatie? Bel direct onze spoedlijn voor onmiddellijke hulp.

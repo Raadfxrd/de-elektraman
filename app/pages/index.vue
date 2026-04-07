@@ -77,22 +77,22 @@ const companyInfo = useCompanyInfo()
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <FeatureItem
-              title="Erkend & Verzekerd"
+              title="Erkend & verzekerd"
               description="Al onze elektriciens zijn volledig erkend, gecertificeerd en verzekerd voor uw gemoedsrust."
           />
 
           <FeatureItem
-              title="Snelle Responstijd"
+              title="Snelle responstijd"
               description="We arriveren snel om uw elektrische problemen efficiënt in te schatten en op te lossen."
           />
 
           <FeatureItem
-              title="Transparante Prijsstelling"
+              title="Transparante prijsstelling"
               description="Geen verborgen kosten. We geven van tevoren gedetailleerde offertes zodat u precies weet wat te verwachten."
           />
 
           <FeatureItem
-              title="Sterke Basis Opgebouwd"
+              title="Sterke basis opgebouwd"
               description="Groeiend netwerk van tevreden klanten in residentiële en commerciële projecten."
           />
         </div>
