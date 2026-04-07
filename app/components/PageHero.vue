@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
   <section
       :class="[
     'relative overflow-hidden px-6',
-    compact ? 'py-16 md:py-24' : 'py-20 md:py-32'
+    compact ? 'py-16 md:py-24' : 'py-20'
   ]">
     <div class="container mx-auto">
       <div
@@ -66,12 +66,13 @@ withDefaults(defineProps<Props>(), {
         </div>
 
         <!-- Right Content -->
-        <div v-if="showImage" class="relative hidden md:block">
-          <div class="w-full aspect-square rounded-2xl flex items-center justify-center overflow-hidden">
+        <div v-if="showImage" class="relative hidden md:flex items-center justify-end">
+          <div class="relative w-full aspect-5/6 flex items-end justify-end overflow-hidden rounded-2xl">
             <img
-                src="/logo.png"
-                alt="De Elektraman Logo"
-                class="w-90% h-90% object-contain"
+                src="/sandro.jpeg"
+                alt="De Elektraman"
+                class="h-full w-full object-cover object-right drop-shadow-xl"
+                style="-webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%); mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);"
             >
           </div>
         </div>
