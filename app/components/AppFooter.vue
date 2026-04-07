@@ -62,6 +62,26 @@
         </div>
       </div>
 
+      <!-- Certifications -->
+      <div class="border-t border-gray-200 pt-6 md:pt-8 mb-6 md:mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+          <p class="text-xs md:text-sm font-semibold text-gray-700">Gecertificeerd</p>
+          <div v-if="visibleCertificateLogos.length"
+               class="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6">
+            <img
+                v-for="logo in visibleCertificateLogos"
+                :key="logo.key"
+                :src="logo.src"
+                :alt="logo.alt"
+                class="h-8 md:h-10 w-auto object-contain"
+                loading="lazy"
+                @error="hideCertificateLogo(logo.key)"
+            >
+          </div>
+          <p v-else class="text-xs md:text-sm text-gray-600">InstallQ en VCA</p>
+        </div>
+      </div>
+
       <!-- Bottom Footer -->
       <div
           class="border-t border-gray-200 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-gray-600 gap-4">
@@ -76,6 +96,24 @@
 </template>
 
 <script setup lang="ts">
+import {computed, ref} from 'vue'
+
 const currentYear = new Date().getFullYear()
 const companyInfo = useCompanyInfo()
+
+const certificateLogos = [
+  {key: 'installq', src: '/certifications/installq-logo.png', alt: 'InstallQ certificering logo'},
+  {key: 'vca', src: '/certifications/vca-logo.png', alt: 'VCA certificering logo'}
+] as const
+
+const hiddenCertificateLogoKeys = ref<string[]>([])
+
+const visibleCertificateLogos = computed(() => {
+  return certificateLogos.filter(logo => !hiddenCertificateLogoKeys.value.includes(logo.key))
+})
+
+const hideCertificateLogo = (logoKey: string) => {
+  if (hiddenCertificateLogoKeys.value.includes(logoKey)) return
+  hiddenCertificateLogoKeys.value.push(logoKey)
+}
 </script>
