@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import {BoltIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon} from '@heroicons/vue/24/solid'
+<script lang="ts" setup>
+import { BoltIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon } from '@heroicons/vue/24/solid'
 
 const companyInfo = useCompanyInfo()
 </script>
@@ -7,12 +7,12 @@ const companyInfo = useCompanyInfo()
   <div>
     <!-- Hero Section -->
     <PageHero
-        title="Professionele elektrische diensten die u kunt"
-        highlight-text="Vertrouwen"
-        description="Van installaties en onderhoud tot spoedeisende reparaties, De Elektraman levert deskundige elektrische diensten met precisie, betrouwbaarheid en professionaliteit."
-        :show-image="true"
-        :primary-button="{ text: 'Vandaag aan de slag', to: '/contact' }"
-        :secondary-button="{ text: 'Bekijk ons werk', to: '/portfolio' }"
+      :primary-button="{ text: 'Vandaag aan de slag', to: '/contact' }"
+      :secondary-button="{ text: 'Bekijk ons werk', to: '/portfolio' }"
+      :show-image="true"
+      description="Van installaties en onderhoud tot spoedeisende reparaties, De Elektraman levert deskundige elektrische diensten met precisie, betrouwbaarheid en professionaliteit."
+      highlight-text="Vertrouwen"
+      title="Professionele elektrische diensten die u kunt"
     />
 
     <!-- Trust Indicators -->
@@ -39,27 +39,27 @@ const companyInfo = useCompanyInfo()
     <section class="py-12 md:py-20 px-6">
       <div class="container mx-auto">
         <SectionHeader
-            title="Onze diensten"
-            description="Volledige elektrische oplossingen afgestemd op uw residentiële, commerciële of industriële behoeften"
+          description="Volledige elektrische oplossingen afgestemd op uw residentiële, commerciële of industriële behoeften"
+          title="Onze diensten"
         />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <ServiceCard
-              :icon="BoltIcon"
-              title="Installaties"
-              description="Professionele installatie van elektrische systemen, verlichting, bedrading en moderne smart home-oplossingen."
+            :icon="BoltIcon"
+            description="Professionele installatie van elektrische systemen, verlichting, bedrading en moderne smart home-oplossingen."
+            title="Installaties"
           />
 
           <ServiceCard
-              :icon="WrenchScrewdriverIcon"
-              title="Onderhoud"
-              description="Regelmatig onderhoud, veiligheidscontroles en preventieve diensten om uw systemen soepel te laten werken."
+            :icon="WrenchScrewdriverIcon"
+            description="Regelmatig onderhoud, veiligheidscontroles en preventieve diensten om uw systemen soepel te laten werken."
+            title="Onderhoud"
           />
 
           <ServiceCard
-              :icon="ExclamationTriangleIcon"
-              title="Storingsdienst"
-              description="24/7 Storingsdienst voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
+            :icon="ExclamationTriangleIcon"
+            description="24/7 Storingsdienst voor dringende elektrische problemen. We zijn er altijd voor u wanneer u ons nodig hebt."
+            title="Storingsdienst"
           />
         </div>
       </div>
@@ -77,23 +77,23 @@ const companyInfo = useCompanyInfo()
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <FeatureItem
-              title="Erkend & verzekerd"
-              description="Al onze elektriciens zijn volledig erkend, gecertificeerd en verzekerd voor uw gemoedsrust."
+            description="Al onze elektriciens zijn volledig erkend, gecertificeerd en verzekerd voor uw gemoedsrust."
+            title="Erkend & verzekerd"
           />
 
           <FeatureItem
-              title="Snelle responstijd"
-              description="We arriveren snel om uw elektrische problemen efficiënt in te schatten en op te lossen."
+            description="We arriveren snel om uw elektrische problemen efficiënt in te schatten en op te lossen."
+            title="Snelle responstijd"
           />
 
           <FeatureItem
-              title="Transparante prijsstelling"
-              description="Geen verborgen kosten. We geven van tevoren gedetailleerde offertes zodat u precies weet wat te verwachten."
+            description="Geen verborgen kosten. We geven van tevoren gedetailleerde offertes zodat u precies weet wat te verwachten."
+            title="Transparante prijsstelling"
           />
 
           <FeatureItem
-              title="Sterke basis opgebouwd"
-              description="Groeiend netwerk van tevreden klanten in residentiële en commerciële projecten."
+            description="Groeiend netwerk van tevreden klanten in residentiële en commerciële projecten."
+            title="Sterke basis opgebouwd"
           />
         </div>
       </div>
@@ -101,11 +101,11 @@ const companyInfo = useCompanyInfo()
 
     <!-- CTA Section -->
     <CallToAction
-        title="Klaar om te beginnen?"
-        description="Neem vandaag contact op met De Elektraman voor een gratis adviesgesprek en ontdek waarom bedrijven en huiseigenaren ons vertrouwen."
-        button-text="Offerte aanvragen"
-        button-link="/contact"
-        :dark-mode="true"
+      :dark-mode="true"
+      button-link="/contact"
+      button-text="Offerte aanvragen"
+      description="Neem vandaag contact op met De Elektraman voor een gratis adviesgesprek en ontdek waarom bedrijven en huiseigenaren ons vertrouwen."
+      title="Klaar om te beginnen?"
     />
   </div>
 </template>

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 interface ProcessStep {
   number: number
   title: string
@@ -25,7 +25,7 @@ defineProps<Props>()
       <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
         <div v-for="step in steps" :key="step.number" class="text-center">
           <div
-              class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
             {{ step.number }}
           </div>
           <h4 class="text-lg font-bold mb-2">{{ step.title }}</h4>

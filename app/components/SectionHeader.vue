@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 interface Props {
   title: string
   description?: string
@@ -15,7 +15,7 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-      :class="[
+    :class="[
     'mb-12 md:mb-16',
     centered ? 'text-center' : ''
   ]">
@@ -23,14 +23,14 @@ withDefaults(defineProps<Props>(), {
       {{ title }}
     </h2>
     <p
-        v-if="description" :class="[
+      v-if="description" :class="[
       'text-base sm:text-lg md:text-xl text-gray-600',
       centered ? 'max-w-2xl mx-auto' : ''
     ]">
       {{ description }}
     </p>
     <p
-        v-if="subtitle" :class="[
+      v-if="subtitle" :class="[
       'text-base sm:text-lg md:text-xl text-gray-700 mt-2',
       centered ? 'max-w-2xl mx-auto' : ''
     ]">

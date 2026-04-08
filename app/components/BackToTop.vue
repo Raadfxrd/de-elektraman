@@ -1,20 +1,20 @@
 <template>
   <Transition name="fade">
     <button
-        v-if="showButton"
-        class="fixed bottom-8 right-8 z-50 p-4 bg-primary text-white cursor-pointer rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 overflow-hidden"
-        aria-label="Terug naar boven"
-        title="Terug naar boven"
-        @click="scrollToTop"
+      v-if="showButton"
+      aria-label="Terug naar boven"
+      class="fixed bottom-8 right-8 z-50 p-4 bg-primary text-white cursor-pointer rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 overflow-hidden"
+      title="Terug naar boven"
+      @click="scrollToTop"
     >
-      <ArrowUpIcon class="h-6 w-6 arrow-up-icon"/>
+      <ArrowUpIcon class="h-6 w-6 arrow-up-icon" />
     </button>
   </Transition>
 </template>
 
-<script setup lang="ts">
-import {ArrowUpIcon} from '@heroicons/vue/24/solid'
-import {onBeforeUnmount, onMounted, ref} from 'vue'
+<script lang="ts" setup>
+import { ArrowUpIcon } from '@heroicons/vue/24/solid'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const showButton = ref(false)
 

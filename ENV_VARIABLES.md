@@ -56,6 +56,15 @@ shows:
 - `NUXT_PUBLIC_SOCIAL_FACEBOOK` - Facebook page URL
 - `NUXT_PUBLIC_SOCIAL_INSTAGRAM` - Instagram profile URL
 
+### Contact Form SMTP (Private)
+
+- `NUXT_SMTP_HOST` - SMTP host (Zoho EU: `smtp.zoho.eu`, Zoho global: `smtp.zoho.com`)
+- `NUXT_SMTP_PORT` - SMTP port (`465` for SSL, `587` for STARTTLS)
+- `NUXT_SMTP_USER` - SMTP username (usually your full Zoho mailbox address)
+- `NUXT_SMTP_PASS` - SMTP password or Zoho app password
+- `NUXT_SMTP_FROM_NAME` - Display name used in outgoing mail
+- `NUXT_CONTACT_TO` - Inbox that receives contact form submissions
+
 ## Usage in Code
 
 The environment variables are accessible throughout the application via the `useCompanyInfo()` composable:
@@ -86,6 +95,7 @@ The environment variables are accessible throughout the application via the `use
 ## Important Notes
 
 - All variables prefixed with `NUXT_PUBLIC_` are exposed to the client-side
+- Variables without `NUXT_PUBLIC_` stay server-side and are safe for SMTP credentials
 - The `.env` file should never be committed to version control
 - Always use `.env.example` as a template for new setups
 - Changes to environment variables require a server restart

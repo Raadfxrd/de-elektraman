@@ -14,6 +14,12 @@ export default defineNuxtConfig({
     ],
 
     runtimeConfig: {
+        smtpHost: '',
+        smtpPort: 465,
+        smtpUser: '',
+        smtpPass: '',
+        smtpFromName: 'De Elektraman Website',
+        contactTo: '',
         public: {
             appName: '',
             websiteName: '',
