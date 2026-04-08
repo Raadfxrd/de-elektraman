@@ -2,6 +2,14 @@
 import { computed, ref } from 'vue'
 import { ChevronLeftIcon, ChevronRightIcon, SparklesIcon, XMarkIcon } from '@heroicons/vue/24/solid'
 
+useSeoMeta({
+  title: 'Portfolio | De Elektraman',
+  description: 'Bekijk een selectie van onze afgeronde projecten in elektra, laadpalen, batterijen, verdeelinrichting en zonne-energie.',
+  ogTitle: 'Portfolio | De Elektraman',
+  ogDescription: 'Bekijk een selectie van onze afgeronde projecten in elektra, laadpalen, batterijen, verdeelinrichting en zonne-energie.',
+  twitterCard: 'summary'
+})
+
 interface Project {
   id: number
   images: string[]

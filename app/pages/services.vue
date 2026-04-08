@@ -6,6 +6,14 @@ import {
   HomeIcon,
   WrenchScrewdriverIcon
 } from '@heroicons/vue/24/solid'
+
+useSeoMeta({
+  title: 'Diensten | De Elektraman',
+  description: 'Bekijk onze elektrische diensten: installaties, onderhoud, inspecties, storingsdienst, laadpalen, batterijen en zonne-energie.',
+  ogTitle: 'Diensten | De Elektraman',
+  ogDescription: 'Bekijk onze elektrische diensten: installaties, onderhoud, inspecties, storingsdienst, laadpalen, batterijen en zonne-energie.',
+  twitterCard: 'summary'
+})
 </script>
 <template>
   <div>

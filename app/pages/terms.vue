@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+const companyInfo = useCompanyInfo()
+const termsPdfPath = '/Algemene%20voorwaarden%20De%20Elektraman.pdf'
+
+useSeoMeta({
+  title: 'Servicevoorwaarden | De Elektraman',
+  description: 'Bekijk of download de servicevoorwaarden van De Elektraman met afspraken over offertes, uitvoering, betaling en garantie.',
+  ogTitle: 'Servicevoorwaarden | De Elektraman',
+  ogDescription: 'Bekijk of download de servicevoorwaarden van De Elektraman met afspraken over offertes, uitvoering, betaling en garantie.',
+  twitterCard: 'summary'
+})
+</script>
 <template>
   <div>
     <PageHero
@@ -49,9 +61,3 @@
     </section>
   </div>
 </template>
-
-<script lang="ts" setup>
-const companyInfo = useCompanyInfo()
-const termsPdfPath = '/Algemene%20voorwaarden%20De%20Elektraman.pdf'
-</script>
-

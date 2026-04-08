@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+const companyInfo = useCompanyInfo()
+
+useSeoMeta({
+  title: 'Privacyverklaring | De Elektraman',
+  description: 'Lees hoe De Elektraman omgaat met persoonsgegevens en welke rechten u heeft volgens onze privacyverklaring.',
+  ogTitle: 'Privacyverklaring | De Elektraman',
+  ogDescription: 'Lees hoe De Elektraman omgaat met persoonsgegevens en welke rechten u heeft volgens onze privacyverklaring.',
+  twitterCard: 'summary'
+})
+</script>
 <template>
   <div>
     <PageHero
@@ -67,8 +78,3 @@
     </section>
   </div>
 </template>
-
-<script lang="ts" setup>
-const companyInfo = useCompanyInfo()
-</script>
-
