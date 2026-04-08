@@ -27,7 +27,7 @@ const serviceTypes = [
   'Offerte Aanvraag'
 ]
 
-const phonePattern = /^[+()\-\s\d]{8,20}$/
+const phonePattern = /^[0-9+() -]{8,20}$/
 
 const mapCategoryToServiceType = (categoryValue: string | null | Array<string | null> | undefined) => {
   const rawValue = Array.isArray(categoryValue) ? categoryValue[0] : categoryValue
@@ -217,7 +217,7 @@ const handleSubmit = async () => {
                     v-model="formData.phone"
                     class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
                     minlength="8"
-                    pattern="[+()\-\s\d]{8,20}"
+                    pattern="[0-9+() -]{8,20}"
                     placeholder="06 1234 5678"
                     required
                     type="tel"

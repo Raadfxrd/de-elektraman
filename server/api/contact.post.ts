@@ -21,7 +21,7 @@ type ContactFormBody = {
 const sanitizeText = (value: unknown) => String(value ?? '').trim()
 
 const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-const isValidPhone = (phone: string) => /^[+()\-\s\d]{8,20}$/.test(phone)
+const isValidPhone = (phone: string) => /^[0-9+() -]{8,20}$/.test(phone)
 
 const escapeHtml = (value: string) => value
   .replace(/&/g, '&amp;')
@@ -143,7 +143,7 @@ export default defineEventHandler(async (event) => {
               </tr>
               <tr>
                 <td style="padding:10px 0;border-bottom:1px solid #e5e7eb;color:#4b5563;font-weight:700;">E-mail</td>
-                <td style="padding:10px 0;border-bottom:1px solid #e5e7eb;"><a href="mailto:${encodeURIComponent(payload.email)}" style="color:#059669;text-decoration:none;">${escapeHtml(payload.email)}</a></td>
+                <td style="padding:10px 0;border-bottom:1px solid #e5e7eb;"><a href="mailto:${payload.email}" style="color:#059669;text-decoration:none;">${escapeHtml(payload.email)}</a></td>
               </tr>
               <tr>
                 <td style="padding:10px 0;border-bottom:1px solid #e5e7eb;color:#4b5563;font-weight:700;">Telefoon</td>
@@ -165,7 +165,7 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div style="margin-top:20px;">
-              <a href="mailto:${encodeURIComponent(payload.email)}?subject=${encodeURIComponent(`Re: ${payload.subject}`)}" style="display:inline-block;padding:12px 18px;background:#10B981;color:#ffffff;text-decoration:none;border-radius:10px;font-weight:700;">Beantwoord dit bericht</a>
+              <a href="mailto:${payload.email}?subject=${encodeURIComponent(`Re: ${payload.subject}`)}" style="display:inline-block;padding:12px 18px;background:#10B981;color:#ffffff;text-decoration:none;border-radius:10px;font-weight:700;">Beantwoord dit bericht</a>
             </div>
           </td>
         </tr>
