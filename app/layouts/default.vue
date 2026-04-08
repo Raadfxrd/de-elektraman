@@ -1,16 +1,16 @@
 <template>
   <div class="bg-white min-h-screen flex flex-col text-gray-900">
-    <AppNavbar/>
+    <AppNavbar />
     <main>
-      <slot/>
+      <slot />
     </main>
-    <AppFooter/>
-    <BackToTop/>
+    <AppFooter />
+    <BackToTop />
   </div>
 </template>
 
-<script setup lang="ts">
-import AppNavbar from "~/components/AppNavbar.vue";
-import AppFooter from "~/components/AppFooter.vue";
-import BackToTop from "~/components/BackToTop.vue";
+<script lang="ts" setup>
+import AppNavbar from '~/components/AppNavbar.vue'
+import AppFooter from '~/components/AppFooter.vue'
+import BackToTop from '~/components/BackToTop.vue'
 </script>

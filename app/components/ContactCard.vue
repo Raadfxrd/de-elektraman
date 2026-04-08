@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import type {Component} from 'vue'
+<script lang="ts" setup>
+import type { Component } from 'vue'
 
 interface Props {
   icon: Component
@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
   isEmergency: false
 })
 
-const {isOpen, isEmergencyAvailable, nextOpeningTime} = useBusinessHours()
+const { isOpen, isEmergencyAvailable, nextOpeningTime } = useBusinessHours()
 
 // Determine if this contact method is currently available
 const isAvailable = computed(() => {
@@ -37,10 +37,10 @@ const availabilityText = computed(() => {
 
 <template>
   <div
-      class="group p-6 md:p-8 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-200 hover:-translate-y-1 text-center">
+    class="group p-6 md:p-8 rounded-xl border border-border text-center">
     <div
-        class="w-12 h-12 md:w-14 md:h-14 bg-primary-light rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
-      <component :is="icon" class="w-6 h-6 md:w-8 md:h-8 text-primary"/>
+      class="w-12 h-12 md:w-14 md:h-14 bg-primary-light rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
+      <component :is="icon" class="w-6 h-6 md:w-8 md:h-8 text-primary" />
     </div>
 
     <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-secondary">{{ title }}</h3>
@@ -50,8 +50,8 @@ const availabilityText = computed(() => {
     </p>
 
     <a
-        :href="contactLink"
-        class="block text-base md:text-lg font-semibold text-primary hover:text-primary-dark transition-colors mb-2"
+      :href="contactLink"
+      class="block text-base md:text-lg font-semibold text-primary hover:text-primary-dark transition-colors mb-2"
     >
       {{ contactText }}
     </a>
@@ -62,17 +62,17 @@ const availabilityText = computed(() => {
 
     <div class="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-gray-100">
       <span
-          v-if="isAvailable"
-          class="inline-flex items-center gap-1 text-xs font-semibold text-primary"
+        v-if="isAvailable"
+        class="inline-flex items-center gap-1 text-xs font-semibold text-primary"
       >
-        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"/>
+        <span class="w-2 h-2 bg-primary rounded-full animate-pulse" />
         {{ availabilityText }}
       </span>
       <span
-          v-else
-          class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500"
+        v-else
+        class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500"
       >
-        <span class="w-2 h-2 bg-gray-400 rounded-full"/>
+        <span class="w-2 h-2 bg-gray-400 rounded-full" />
         {{ availabilityText }}
       </span>
     </div>

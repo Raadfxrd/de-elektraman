@@ -1,6 +1,6 @@
-<script setup lang="ts">
-import {BoltIcon, CheckBadgeIcon, ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon} from '@heroicons/vue/24/solid'
-import {nextTick, onMounted, ref, watch} from 'vue'
+<script lang="ts" setup>
+import { BoltIcon, CheckBadgeIcon, ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/vue/24/solid'
+import { nextTick, onMounted, ref, watch } from 'vue'
 
 const companyInfo = useCompanyInfo()
 const route = useRoute()
@@ -32,7 +32,7 @@ const mapCategoryToServiceType = (categoryValue: string | null | Array<string | 
   const categoryMap: Record<string, string> = {
     residentieel: 'Residentiële installatie',
     commercieel: 'Commercieel project',
-    onderhoud: 'Onderhoud of inspectie',
+    onderhoud: 'Onderhoud of inspectie'
   }
 
   return categoryMap[normalized] ?? null
@@ -63,9 +63,9 @@ watch(() => [route.hash, route.query.category], () => {
   <div>
     <!-- Hero Section -->
     <PageHero
-        title="Laten we uw project"
-        highlight-text="Bespreken"
-        description="Onze experts staan klaar om uw vragen te beantwoorden en een gratis offerte op te stellen."
+      description="Onze experts staan klaar om uw vragen te beantwoorden en een gratis offerte op te stellen."
+      highlight-text="Bespreken"
+      title="Laten we uw project"
     />
 
     <!-- Contact Methods - Cards -->
@@ -73,31 +73,31 @@ watch(() => [route.hash, route.query.category], () => {
       <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <ContactCard
-              :icon="PhoneIcon"
-              title="Bel ons direct"
-              subtitle="Praat met een expert"
-              :contact-text="companyInfo.phoneDisplay"
-              :contact-link="`tel:${companyInfo.phone}`"
-              :description="`Ma - Vr: ${companyInfo.hours.weekdays}`"
+            :contact-link="`tel:${companyInfo.phone}`"
+            :contact-text="companyInfo.phoneDisplay"
+            :description="`Ma - Vr: ${companyInfo.hours.weekdays}`"
+            :icon="PhoneIcon"
+            subtitle="Praat met een expert"
+            title="Bel ons direct"
           />
 
           <ContactCard
-              :icon="EnvelopeIcon"
-              title="Stuur een e-mail"
-              subtitle="We reageren snel"
-              :contact-text="companyInfo.email"
-              :contact-link="`mailto:${companyInfo.email}`"
-              :description="`Ma - Vr: ${companyInfo.hours.weekdays}`"
+            :contact-link="`mailto:${companyInfo.email}`"
+            :contact-text="companyInfo.email"
+            :description="`Ma - Vr: ${companyInfo.hours.weekdays}`"
+            :icon="EnvelopeIcon"
+            subtitle="We reageren snel"
+            title="Stuur een e-mail"
           />
 
           <ContactCard
-              :icon="ClockIcon"
-              title="24/7 Noodhulp"
-              subtitle="Altijd bereikbaar"
-              :contact-text="companyInfo.emergencyPhoneDisplay"
-              :contact-link="`tel:${companyInfo.emergencyPhone}`"
-              description="Voor spoedeisende situaties"
-              :is-emergency="true"
+            :contact-link="`tel:${companyInfo.emergencyPhone}`"
+            :contact-text="companyInfo.emergencyPhoneDisplay"
+            :icon="ClockIcon"
+            :is-emergency="true"
+            description="Voor spoedeisende situaties"
+            subtitle="Altijd bereikbaar"
+            title="24/7 Noodhulp"
           />
         </div>
       </div>
@@ -109,8 +109,9 @@ watch(() => [route.hash, route.query.category], () => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
 
           <!-- Left - Contact Form -->
-          <div id="contact-form"
-               class="bg-gray-50 rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-12 border border-border scroll-mt-28 md:scroll-mt-32">
+          <div
+            id="contact-form"
+            class="bg-gray-50 rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-8 lg:p-12 border border-border scroll-mt-28 md:scroll-mt-32">
             <div class="mb-6 md:mb-8">
               <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-3">Stuur een bericht</h2>
               <p class="text-gray-700 text-base md:text-lg">
@@ -121,59 +122,59 @@ watch(() => [route.hash, route.query.category], () => {
             <form class="space-y-5 md:space-y-6" @submit.prevent="() => {}">
               <!-- Name -->
               <div>
-                <label for="name" class="block text-sm font-bold text-gray-800 mb-2">
+                <label class="block text-sm font-bold text-gray-800 mb-2" for="name">
                   Volledige naam *
                 </label>
                 <input
-                    id="name"
-                    ref="nameInput"
-                    v-model="formData.name"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
-                    placeholder="Jan de Vries"
+                  id="name"
+                  ref="nameInput"
+                  v-model="formData.name"
+                  class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
+                  placeholder="Jan de Vries"
+                  required
+                  type="text"
                 >
               </div>
 
               <!-- Email & Phone -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                 <div>
-                  <label for="email" class="block text-sm font-bold text-gray-800 mb-2">
+                  <label class="block text-sm font-bold text-gray-800 mb-2" for="email">
                     E-mailadres *
                   </label>
                   <input
-                      id="email"
-                      v-model="formData.email"
-                      type="email"
-                      required
-                      class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
-                      placeholder="jan@voorbeeld.nl"
+                    id="email"
+                    v-model="formData.email"
+                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
+                    placeholder="jan@voorbeeld.nl"
+                    required
+                    type="email"
                   >
                 </div>
                 <div>
-                  <label for="phone" class="block text-sm font-bold text-gray-800 mb-2">
+                  <label class="block text-sm font-bold text-gray-800 mb-2" for="phone">
                     Telefoonnummer
                   </label>
                   <input
-                      id="phone"
-                      v-model="formData.phone"
-                      type="tel"
-                      class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
-                      placeholder="06 1234 5678"
+                    id="phone"
+                    v-model="formData.phone"
+                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
+                    placeholder="06 1234 5678"
+                    type="tel"
                   >
                 </div>
               </div>
 
               <!-- Service Type -->
               <div>
-                <label for="serviceType" class="block text-sm font-bold text-gray-800 mb-2">
+                <label class="block text-sm font-bold text-gray-800 mb-2" for="serviceType">
                   Type dienst *
                 </label>
                 <select
-                    id="serviceType"
-                    v-model="formData.serviceType"
-                    required
-                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-base md:text-lg"
+                  id="serviceType"
+                  v-model="formData.serviceType"
+                  class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all bg-white text-base md:text-lg"
+                  required
                 >
                   <option v-for="type in serviceTypes" :key="type" :value="type">
                     {{ type }}
@@ -183,43 +184,44 @@ watch(() => [route.hash, route.query.category], () => {
 
               <!-- Subject -->
               <div>
-                <label for="subject" class="block text-sm font-bold text-gray-800 mb-2">
+                <label class="block text-sm font-bold text-gray-800 mb-2" for="subject">
                   Onderwerp *
                 </label>
                 <input
-                    id="subject"
-                    v-model="formData.subject"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
-                    placeholder="Waar kunnen we u mee helpen?"
+                  id="subject"
+                  v-model="formData.subject"
+                  class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
+                  placeholder="Waar kunnen we u mee helpen?"
+                  required
+                  type="text"
                 >
               </div>
 
               <!-- Message -->
               <div>
-                <label for="message" class="block text-sm font-bold text-gray-800 mb-2">
+                <label class="block text-sm font-bold text-gray-800 mb-2" for="message">
                   Uw bericht *
                 </label>
                 <textarea
-                    id="message"
-                    v-model="formData.message"
-                    required
-                    rows="6"
-                    class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none text-base md:text-lg bg-white"
-                    placeholder="Vertel ons meer over uw project, tijdlijn, budget en eventuele specifieke wensen..."
-                ></textarea>
+                  id="message"
+                  v-model="formData.message"
+                  class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none text-base md:text-lg bg-white"
+                  placeholder="Vertel ons meer over uw project, tijdlijn, budget en eventuele specifieke wensen..."
+                  required
+                  rows="6"
+                />
               </div>
 
               <!-- Submit Button -->
               <button
-                  type="submit"
-                  class="w-full px-6 md:px-8 py-4 md:py-5 bg-primary text-white text-base md:text-lg font-bold rounded-xl cursor-pointer hover:bg-primary-dark hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                class="w-full px-6 md:px-8 py-4 md:py-5 bg-primary text-white text-base md:text-lg font-bold rounded-xl cursor-pointer hover:bg-primary-dark hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                type="submit"
               >
                 <span>Verstuur bericht</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <path
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" />
                 </svg>
               </button>
 
@@ -239,7 +241,7 @@ watch(() => [route.hash, route.query.category], () => {
                 <div class="flex gap-4 text-white">
                   <div class="shrink-0">
                     <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-                      <CheckBadgeIcon class="w-7 h-7 text-white"/>
+                      <CheckBadgeIcon class="w-7 h-7 text-white" />
                     </div>
                   </div>
                   <div>
@@ -252,7 +254,7 @@ watch(() => [route.hash, route.query.category], () => {
                 <div class="flex gap-4 text-white">
                   <div class="shrink-0">
                     <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-                      <BoltIcon class="w-7 h-7 text-white"/>
+                      <BoltIcon class="w-7 h-7 text-white" />
                     </div>
                   </div>
                   <div>
@@ -264,7 +266,7 @@ watch(() => [route.hash, route.query.category], () => {
                 <div class="flex gap-4 text-white">
                   <div class="shrink-0">
                     <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-                      <MapPinIcon class="w-7 h-7 text-white"/>
+                      <MapPinIcon class="w-7 h-7 text-white" />
                     </div>
                   </div>
                   <div>
@@ -278,7 +280,7 @@ watch(() => [route.hash, route.query.category], () => {
             <!-- Emergency Card -->
             <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg border-2 border-red">
               <div class="flex items-center gap-2 mb-4">
-                <span class="w-3 h-3 bg-red rounded-full animate-pulse"/>
+                <span class="w-3 h-3 bg-red rounded-full animate-pulse" />
                 <span class="text-xs font-bold uppercase tracking-wider text-red">Noodgeval</span>
               </div>
 
@@ -289,10 +291,10 @@ watch(() => [route.hash, route.query.category], () => {
               </p>
 
               <a
-                  :href="`tel:${companyInfo.emergencyPhone}`"
-                  class="inline-flex items-center justify-center gap-2 w-full px-4 md:px-6 py-3 md:py-4 bg-red text-white text-sm md:text-base font-bold rounded-xl hover:bg-red-dark transition-all shadow-md hover:shadow-lg"
+                :href="`tel:${companyInfo.emergencyPhone}`"
+                class="inline-flex items-center justify-center gap-2 w-full px-4 md:px-6 py-3 md:py-4 bg-red text-white text-sm md:text-base font-bold rounded-xl hover:bg-red-dark transition-all shadow-md hover:shadow-lg"
               >
-                <PhoneIcon class="w-5 h-5"/>
+                <PhoneIcon class="w-5 h-5" />
                 <span>Bel Nu: {{ companyInfo.emergencyPhoneDisplay }}</span>
               </a>
             </div>
@@ -325,14 +327,14 @@ watch(() => [route.hash, route.query.category], () => {
     <section class="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
       <div class="container mx-auto max-w-6xl">
         <SectionHeader
-            title="Wat u kunt verwachten"
-            description="Ons proces is transparant en efficiënt"
+          description="Ons proces is transparant en efficiënt"
+          title="Wat u kunt verwachten"
         />
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           <div class="text-center">
             <div
-                class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
+              class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
               1
             </div>
             <h4 class="text-base md:text-lg font-bold mb-2 text-secondary">Contact</h4>
@@ -341,7 +343,7 @@ watch(() => [route.hash, route.query.category], () => {
 
           <div class="text-center">
             <div
-                class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
+              class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
               2
             </div>
             <h4 class="text-base md:text-lg font-bold mb-2 text-secondary">Intake</h4>
@@ -350,7 +352,7 @@ watch(() => [route.hash, route.query.category], () => {
 
           <div class="text-center">
             <div
-                class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
+              class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
               3
             </div>
             <h4 class="text-base md:text-lg font-bold mb-2 text-secondary">Offerte</h4>
@@ -359,7 +361,7 @@ watch(() => [route.hash, route.query.category], () => {
 
           <div class="text-center">
             <div
-                class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
+              class="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl md:text-3xl font-bold shadow-lg">
               4
             </div>
             <h4 class="text-base md:text-lg font-bold mb-2 text-secondary">Uitvoering</h4>
@@ -371,11 +373,11 @@ watch(() => [route.hash, route.query.category], () => {
 
     <!-- Final CTA -->
     <CallToAction
-        title="Laten we beginnen"
-        description="Neem vandaag nog contact op en ontvang binnen 24 uur een vrijblijvende offerte."
-        button-text="Bel direct"
-        :button-link="`tel:${companyInfo.phone}`"
-        :dark-mode="true"
+      :button-link="`tel:${companyInfo.phone}`"
+      :dark-mode="true"
+      button-text="Bel direct"
+      description="Neem vandaag nog contact op en ontvang binnen 24 uur een vrijblijvende offerte."
+      title="Laten we beginnen"
     />
   </div>
 </template>
