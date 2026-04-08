@@ -5,6 +5,9 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 const companyInfo = useCompanyInfo()
 const route = useRoute()
 const nameInput = ref<HTMLInputElement | null>(null)
+const isSubmitting = ref(false)
+const submitError = ref('')
+const submitSuccess = ref('')
 
 const formData = ref({
   name: '',
@@ -24,15 +27,17 @@ const serviceTypes = [
   'Offerte Aanvraag'
 ]
 
+const phonePattern = /^[+()\-\s\d]{8,20}$/
+
 const mapCategoryToServiceType = (categoryValue: string | null | Array<string | null> | undefined) => {
   const rawValue = Array.isArray(categoryValue) ? categoryValue[0] : categoryValue
   if (!rawValue) return null
 
   const normalized = rawValue.trim().toLowerCase()
   const categoryMap: Record<string, string> = {
-    residentieel: 'Residentiële installatie',
-    commercieel: 'Commercieel project',
-    onderhoud: 'Onderhoud of inspectie'
+    residentieel: 'Residentiële Installatie',
+    commercieel: 'Commercieel Project',
+    onderhoud: 'Onderhoud & Inspectie'
   }
 
   return categoryMap[normalized] ?? null
@@ -57,6 +62,58 @@ onMounted(() => {
 watch(() => [route.hash, route.query.category], () => {
   void applyRouteFormState()
 })
+
+const handleSubmit = async () => {
+  submitError.value = ''
+  submitSuccess.value = ''
+
+  const payload = {
+    name: formData.value.name.trim(),
+    email: formData.value.email.trim(),
+    phone: formData.value.phone.trim(),
+    subject: formData.value.subject.trim(),
+    message: formData.value.message.trim(),
+    serviceType: formData.value.serviceType
+  }
+
+  if (!payload.name || !payload.email || !payload.phone || !payload.subject || !payload.message || !payload.serviceType) {
+    submitError.value = 'Vul alle verplichte velden in.'
+    return
+  }
+
+  if (!phonePattern.test(payload.phone)) {
+    submitError.value = 'Vul een geldig telefoonnummer in.'
+    return
+  }
+
+  if (payload.message.length < 10) {
+    submitError.value = 'Uw bericht moet minimaal 10 tekens bevatten.'
+    return
+  }
+
+  isSubmitting.value = true
+
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: payload
+    })
+
+    submitSuccess.value = 'Bedankt! Uw bericht is verzonden. We nemen snel contact met u op.'
+    formData.value = {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: '',
+      serviceType: 'Algemene Vraag'
+    }
+  } catch {
+    submitError.value = 'Verzenden is mislukt. Probeer het opnieuw of bel ons direct.'
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>
 
 <template>
@@ -119,7 +176,7 @@ watch(() => [route.hash, route.query.category], () => {
               </p>
             </div>
 
-            <form class="space-y-5 md:space-y-6" @submit.prevent="() => {}">
+            <form class="space-y-5 md:space-y-6" @submit.prevent="handleSubmit">
               <!-- Name -->
               <div>
                 <label class="block text-sm font-bold text-gray-800 mb-2" for="name">
@@ -153,13 +210,16 @@ watch(() => [route.hash, route.query.category], () => {
                 </div>
                 <div>
                   <label class="block text-sm font-bold text-gray-800 mb-2" for="phone">
-                    Telefoonnummer
+                    Telefoonnummer *
                   </label>
                   <input
                     id="phone"
                     v-model="formData.phone"
                     class="w-full px-4 py-3 md:py-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-base md:text-lg bg-white"
+                    minlength="8"
+                    pattern="[+()\-\s\d]{8,20}"
                     placeholder="06 1234 5678"
+                    required
                     type="tel"
                   >
                 </div>
@@ -214,16 +274,25 @@ watch(() => [route.hash, route.query.category], () => {
 
               <!-- Submit Button -->
               <button
-                class="w-full px-6 md:px-8 py-4 md:py-5 bg-primary text-white text-base md:text-lg font-bold rounded-xl cursor-pointer hover:bg-primary-dark hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                :disabled="isSubmitting"
+                class="w-full px-6 md:px-8 py-4 md:py-5 bg-primary text-white text-base md:text-lg font-bold rounded-xl cursor-pointer hover:bg-primary-dark hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-primary"
                 type="submit"
               >
-                <span>Verstuur bericht</span>
+                <span>{{ isSubmitting ? 'Verzenden...' : 'Verstuur bericht' }}</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="2" />
                 </svg>
               </button>
+
+              <p v-if="submitSuccess" class="text-sm text-green-700 text-center font-semibold">
+                {{ submitSuccess }}
+              </p>
+
+              <p v-if="submitError" class="text-sm text-red text-center font-semibold">
+                {{ submitError }}
+              </p>
 
               <p class="text-sm text-gray-600 text-center">
                 Door dit formulier te verzenden, neemt u contact op via e-mail of telefoon.
