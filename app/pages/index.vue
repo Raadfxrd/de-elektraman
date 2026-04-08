@@ -2,6 +2,14 @@
 import { BoltIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon } from '@heroicons/vue/24/solid'
 
 const companyInfo = useCompanyInfo()
+
+useSeoMeta({
+  title: 'De Elektraman | Efficiente en professionele elektrische diensten',
+  description: 'Professionele elektrische diensten voor woning en bedrijf, van installatie en onderhoud tot 24/7 storingsdienst.',
+  ogTitle: 'De Elektraman | Efficiente en professionele elektrische diensten',
+  ogDescription: 'Professionele elektrische diensten voor woning en bedrijf, van installatie en onderhoud tot 24/7 storingsdienst.',
+  twitterCard: 'summary'
+})
 </script>
 <template>
   <div>

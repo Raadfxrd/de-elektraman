@@ -4,6 +4,15 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 
 const companyInfo = useCompanyInfo()
 const route = useRoute()
+
+useSeoMeta({
+  title: 'Contact | De Elektraman',
+  description: 'Neem contact op met De Elektraman voor advies, storingsdienst of een vrijblijvende offerte voor uw elektrische project.',
+  ogTitle: 'Contact | De Elektraman',
+  ogDescription: 'Neem contact op met De Elektraman voor advies, storingsdienst of een vrijblijvende offerte voor uw elektrische project.',
+  twitterCard: 'summary'
+})
+
 const nameInput = ref<HTMLInputElement | null>(null)
 const isSubmitting = ref(false)
 const submitError = ref('')
