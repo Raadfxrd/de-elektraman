@@ -277,8 +277,8 @@ All components are located in `app/components/` and are auto-imported by Nuxt. S
 
 <template>
   <ServiceCard
-      title="Your Service"
-      description="Service description"
+    title="Your Service"
+    description="Service description"
   />
 </template>
 ```
@@ -294,7 +294,7 @@ Two main composables provide reusable functionality:
 
 <script setup>
   const companyInfo = useCompanyInfo()
-  const {isOpen} = useBusinessHours()
+  const { isOpen } = useBusinessHours()
 </script>
 ```
 
